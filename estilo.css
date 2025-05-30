@@ -1,0 +1,378 @@
+body{
+	background-image: url("resources/fondo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+*{
+    cursor:url("resources/cursor.png"), auto;
+}
+#principal{
+	width:75%;
+	margin:5% 5% 5% 20%;
+    z-index:2;
+    color: #00face;
+}
+
+.bienvenide{
+  -webkit-animation-name: cambioColor;
+  -webkit-animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function:linear;
+  color:black;
+  font-size: 700%;
+  display: inline-block;
+  text-decoration: wavy;
+  font-weight: bolder;
+}
+@-webkit-keyframes cambioColor {
+  0% {
+    color:red;
+  }
+  20% {
+    color:green;
+  }
+  40% {
+    color:yellow;
+  }
+  60% {
+    color:cornflowerblue;
+  }
+  80% {
+    color:purple
+  }
+  100% {
+    color:red;
+  }
+}
+
+.gifPeque{
+  height:100px;
+  width:100px;
+  display:inline-block;
+  margin:0 20px 0 20px;
+}
+
+#titulo{
+	margin-top:0px;
+	align-self:center;
+	width:100%;
+}
+
+.tdIzquierda{
+	width:50%;
+	height: 15%;
+	text-align:center;
+}
+
+.tdDerecha{
+	width:50%;
+	text-align:right;
+}
+
+#cuerpo{
+	width:100%;
+	background-color: rgba(241,185,0, .5);
+	border: solid rgb(241,185,0) 5px;
+}
+
+#divScrolleable{
+	overflow:hidden;
+	height:100px;
+	width:80%;
+	border: 30px solid rgb(241,185,0);
+	border-image: url("resources/sparkborder.gif");
+	border-image-repeat: space;
+	text-align:center;
+}
+
+#divSellos{
+	-webkit-animation-name: move;
+	-webkit-animation-duration: 12s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: up;
+	-webkit-animation-timing-function:linear;
+}
+@-webkit-keyframes move {
+   0% {
+      transform:translateY(15%);
+   }
+   100% {
+      transform:translateY(-100%);
+   }
+}
+
+.sello{
+	height:50%;
+	width:30%;
+}
+
+.separadorEstrellas{
+	width:100%;
+	margin:auto;
+	padding:auto;
+}
+
+#bienvenida{
+	width: 40%;
+	height:20%;
+	margin:5% 30% 5% 30%;
+}
+
+.fotoPerfil{
+	float:left;
+	border: 30px solid transparent;
+	border-image: url("resources/sparkborder.gif");
+	border-image-repeat: space;
+	height:200px;
+	width:200px;
+}
+
+.cuerpo{
+	padding:20px;
+}
+
+.bgm{
+    width:75%;
+    position:fixed;
+    height:50px;
+    top:1%;
+    background-color:white;
+    z-index:2;
+
+    visibility: hidden;
+}
+
+#yo{
+    position:absolute;
+    top: 5px;
+    left: 5px;
+
+}
+
+#botoneraReproductor{
+  text-align: center;
+}
+
+/*
+#lateral{
+    width:12%;
+    height:auto;
+    border:solid #00face 2px;
+    position:sticky;
+    padding:0px;
+    top:50px;
+}
+*/
+/*
+#lateral{
+    width:12%;
+    top:217px;
+    height:auto;
+    border:solid #00face 2px;
+    position:fixed;
+    border:solid rgb(241,185,0) 5px;
+}
+*/
+#contenedorLateral{
+    height:360%;
+    width:100%;
+    position:absolute;
+}
+#lateral{
+    margin-top:210px;
+    width:19%;
+    top:20px;
+    height:auto;
+    position:sticky;
+    border:solid rgb(241,185,0) 5px;
+    background-color: rgb(241,185,0);
+    z-index:2;
+}
+
+.reproductor{
+  font-family: monospace;
+  margin-top:0px;
+  width:100%;
+  height:auto;
+  /* color: #3a3a3a; */
+
+  border:none;
+  background-color: rgba(255, 255, 255, 0.559);
+  z-index:2;
+}
+
+.disco{
+  width:50%;
+  aspect-ratio : 1 / 1;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top:5%;
+  margin-bottom:5%;
+}
+
+.blinkieBotonera{
+    width:100%;
+    height:70%;
+}
+
+.entrada > h1{
+    text-align:center;
+}
+
+#contactame > form{
+    text-align:center;
+    background-color: #00face;
+    color:grey;
+    width:500px;
+    margin:auto;
+    padding:10px 0px 10px 0px;
+    margin-bottom:50px;
+}
+
+#contactame > form > input{
+    width:200px;
+    margin:2px 10px 2px 10px;
+}
+
+#mensaje{
+    width:400px;
+    height:200px;
+    align-self:top;
+    color:grey;
+}
+
+/* input:hover, #mensaje:hover{
+    background-color:white;
+} */
+
+.sliderV {
+  -webkit-appearance: none;
+  height: 5px;
+  background-color: #3a3a3a;
+  margin-bottom:4%;
+  margin-top:4%;
+}
+
+.sliderV::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: url("resources/reproductor/bola.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.sliderV::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-image: url("resources/reproductor/bola.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+[class*='parrot'] {
+  position: absolute;
+  height: 60px; 
+  width: 60px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  z-index:10;
+  opacity: 100%;
+  pointer-events: none;
+}
+
+.parrot-1 {
+  background-image: url('resources/orbita/1.png');
+}
+
+.parrot-2 {
+  background-image: url('resources/orbita/2.png');
+}
+
+.parrot-3 {
+  background-image: url('resources/orbita/3.png');
+}
+
+.parrot-4 {
+  background-image: url('resources/orbita/4.png');
+}
+
+.parrot-5 {
+  background-image: url('resources/orbita/5.png');
+}
+
+.parrot-6 {
+  background-image: url('resources/orbita/6.png');
+}
+
+.parrot-7 {
+  background-image: url('resources/orbita/7.png');
+}
+
+.parrot-8 {
+  background-image: url('resources/orbita/8.png');
+}
+
+.parrot-9 {
+  background-image: url('resources/orbita/9.png');
+}
+
+.parrot-10 {
+  background-image: url('resources/orbita/10.png');
+}
+
+.parrot-11 {
+  background-image: url('resources/orbita/11.png');
+}
+
+.parrot-12 {
+  background-image: url('resources/orbita/12.png');
+}
+
+.parrot-13 {
+  background-image: url('resources/orbita/13.png');
+}
+
+.parrot-14 {
+  background-image: url('resources/orbita/14.png');
+}
+
+.parrot-15 {
+  background-image: url('resources/orbita/15.png');
+}
+
+.parrot-16 {
+  background-image: url('resources/orbita/16.png');
+}
+
+.parrot-17 {
+  background-image: url('resources/orbita/17.png');
+}
+
+.parrot-18 {
+  background-image: url('resources/orbita/18.png');
+}
+
+.parrot-19 {
+  background-image: url('resources/orbita/19.png');
+}
+
+.parrot-20 {
+  background-image: url('resources/orbita/20.png');
+}
