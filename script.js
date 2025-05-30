@@ -93,6 +93,19 @@ function siguienteCancion(){
   audios[num].volume = volT;
   audios[num].play();
 
+  var duracionTotal = document.getElementById("duracionTotal");
+  var segundos = audios[num].duration;
+  var minutos = Math.floor(segundos/60);
+  segundos = Math.floor(segundos%60);
+
+  if(minutos<10){
+    minutos = "0"+minutos;
+  }
+  if(segundos<10){
+    segundos = "0"+segundos;
+  }
+  duracionTotal.innerHTML = minutos+":"+segundos;
+
   document.getElementById('imagenDiscoA').value = num;
   document.getElementById('imagenDiscoA').href =audios[num].value;
   document.getElementById('imagenDisco').src = "resources/musica/disco"+num+".png";
@@ -109,10 +122,22 @@ function minutoCero(){
     if(num<0){
       num = (audios.length-1);
     }
-    console.log(num);
     audios[num].currentTime = 0;
     audios[num].volume = volT;
     audios[num].play();
+
+    var duracionTotal = document.getElementById("duracionTotal");
+    var segundos = audios[num].duration;
+    var minutos = Math.floor(segundos/60);
+    segundos = Math.floor(segundos%60);
+
+    if(minutos<10){
+    minutos = "0"+minutos;
+    }
+    if(segundos<10){
+      segundos = "0"+segundos;
+    }
+    duracionTotal.innerHTML = minutos+":"+segundos;
 
     document.getElementById('imagenDiscoA').value = num;
     document.getElementById('imagenDiscoA').href =audios[num].value;
