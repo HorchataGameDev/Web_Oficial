@@ -187,11 +187,12 @@ function irAlSegundo(segundo){
 }
 
 //Por cada 3 sellos la animacion dura x segundos más
-var sellos= 41;
+var sellos= 49; //Estupido javascript no sabe contar ficheros
 var contenedorSellos = document.getElementById("divSellos");
 for(var i=1;i<=sellos;i++){
     contenedorSellos.innerHTML = contenedorSellos.innerHTML+"<img class=sello src=resources/sellos/"+i+".gif>";
 }
+
 
 const PARROTS = 25,
       SIZE = 30,

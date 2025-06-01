@@ -7,6 +7,7 @@
     <title>HorchataGameDev</title>
     <link rel="stylesheet" href="estilo.css">
     <link rel="icon" href="resources/icono.png" type="image/x-icon">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   </head>
   <body>
@@ -50,9 +51,8 @@
 
 		<table id=titulo>
 			<tr><td class=tdIzquierda><div id=divScrolleable>
-				<div id=divSellos>
-
-				</div>
+				<div id=divSellos onclick="window.location='sellos.html';"></div>
+				<!-- <div id=divSellos onclick="window.location='https://horchatagamedev.github.io/Web_Oficial/sellos';"></div> -->
 			</div></td><td class=tdDerecha><img src=resources/nombre.gif id=titulo height=200 width=400></td></tr>
 		</table>
 
@@ -63,12 +63,14 @@
 				<h1 class="bienvenide">bienvenide</h1>
 				<img src="resources/ynbaile.gif" class="gifPeque">
 			</center>
-			<img src=resources/welcome.gif id=bienvenida title=https://web.archive.org/web/20090830230956/http://www.geocities.com/la_corsarie/welcome.gif height=100 width=200>
+			<!-- <img src=resources/welcome.gif id=bienvenida title=https://web.archive.org/web/20090830230956/http://www.geocities.com/la_corsarie/welcome.gif height=100 width=200> -->
 			<div id=sobreMi class=entrada>
 				<img src=resources/sparkhr.gif class=separadorEstrellas><br>
 				<h1>SOBRE MI</h1>
 				
 				<p class=cuerpo>
+					<iframe loading="lazy" width="100%" height="100%" src="https://x.com/HorchataGameDev" style="height: 100%;" frameborder="0" scrolling="no"></iframe>
+
 					Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
 				</p>
 			</div>
@@ -96,8 +98,24 @@
 			<div id=amigos class=entrada>
 				<img src=resources/sparkhr.gif class=separadorEstrellas><br>
 				<h1>VISITA A MIS AMIGOS</h1>
+				<h2>gente guay sexy y con talento</h2>
+				<p>necesito que TÚ <img src = https://st2.depositphotos.com/1032561/6099/i/950/depositphotos_60997147-stock-photo-hand-pointing-at-viewer.jpg height="=100px" width="100px" style="display: :inline;"> persona leyendo esto te hagas unba página para poder linkear aqui. Este espacio está reservado para oomfies</p>
+				<h2>Sitios chulos en la net</h2>
+				<p>esto son páginas que me gustan mucho no tengas miedo echales un vistazo</p>
+				<h2>The Cringe Captain</h2>
+				<p>este soy yo! este es mi botón copialo si quieres ponerme en tu página</p>
+				<a class="botonLink" href="https://horchatagamedev.github.io/Web_Oficial/"><img src="resources/botonWeb.gif"></a>
+				<textarea readonly width=420 height=200px>
+<a href="https://horchatagamedev.github.io/Web_Oficial/">
+ <img src="https://horchatagamedev.github.io/Web_Oficial/resources/botonWeb.gif">
+</a>
+				</textarea><br>
+
+
+
 				<p class=cuerpo>
-					Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
+					
+					
 				</p>
 			</div>
 			<div id=contactame class=entrada>
@@ -106,14 +124,14 @@
 				<p class=cuerpo>
 					Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
 				</p>
-				<form>
+				<!-- <form>
 					<input type=text placeholder=nombre name=nombre>
 					<input type=text placeholder=apellidos name=apellidos><br>
 					<input type=mail placeholder=correo name=correo>
 					<input type=phone placeholder=telefono name=telefono><br>
 					<textarea maxlength=2000 name=mensaje height=200 width=420 placeholder="escribe aqui tu mensaje" id=mensaje></textarea><br>
 					<input type=submit value=enviar>
-				</form>
+				</form> -->
 			</div>
 			
 		</div>

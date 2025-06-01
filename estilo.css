@@ -280,7 +280,16 @@ body::-webkit-scrollbar{
 
 
 
+.muestraSellos{
+  margin: auto;
+  width: 10%;
+}
 
+#divA{
+  margin:auto;
+  text-align: center;
+  padding: 20px;
+}
 
 
 
