@@ -5,32 +5,15 @@
  * Circular mouse trail logic from Tim Tilton on Dynamic Drive http://dynamicdrive.com/dynamicindex13/circletext.htm
  */
 
- /*
-window.addEventListener('load', function() {
-	var audio = new Audio('resources/bgm.mp3');
-	audio.play();
-});
-*/
-
-/*
-var audio = new Audio('resources/bgm.mp3');
-function activarAudio(){
-    Audio.play();
-    if(audio.paused){
-        setTimeout(activarAudio, 1000);
-    }
-}
-*/
-
 // CANCIONES: Musica Magica de Isadora Juice, DIAMONDS de Princess Princess y TEAM ZISSOU DE SEU JORGE
 // MODO OSCURO: The ocean de Linna Olsson, Under a monochromatic sky y FRAGMENTS DE MISHA PANFILOV
-document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight+30)+"px");
+document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight-210)+"px");
 // window.onresize = cambiarTam;
 // function cambiarTam(){
 //   document.getElementById('contenedorLateral').setAttribute("style","height:"+document.getElementById('contenido').clientHeight+"px");
 // }
 window.onresize = function() {
-    document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight+30)+"px");
+    document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight-210)+"px");
  }
 
 audios = document.getElementsByClassName("bgm");

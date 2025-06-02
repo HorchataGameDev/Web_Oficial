@@ -22,18 +22,15 @@ body::-webkit-scrollbar{
 }
 #principal{
 	width:75%;
-	margin:5% 5% 5% 20%;
+	margin:0% 5% 5% 20%;
     z-index:2;
     /* color: #00face; */
     color: black;
 }
-#principal h1{
-  text-shadow: 5px 5px 5px #00face;
-}
 
 .bienvenide{
   -webkit-animation-name: cambioColor;
-  -webkit-animation-duration: 8s;
+  -webkit-animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function:linear;
   color:black;
@@ -71,9 +68,12 @@ body::-webkit-scrollbar{
 }
 
 #titulo{
+  position:relative;
+  top:0px;
 	margin-top:0px;
 	align-self:center;
 	width:100%;
+  border-collapse: collapse;
 }
 
 .tdIzquierda{
@@ -124,30 +124,27 @@ body::-webkit-scrollbar{
   pointer-events: none;
 }
 
-
-
 #divScrolleable{
 	overflow:hidden;
-  top: 5px;
-  left: 5px;
-	height: 100px;
-	width:80%;
+	height: 150px;
+	width: 80%;
 	border: 30px solid rgb(241,185,0);
 	border-image: url("resources/sparkborder.gif");
 	border-image-repeat: space;
 	text-align:center;
+  margin:auto;
 }
 
 #divSellos{
 	-webkit-animation-name: move;
-	-webkit-animation-duration: 12s;
+	-webkit-animation-duration: 7s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-direction: up;
 	-webkit-animation-timing-function:linear;
 }
 @-webkit-keyframes move {
    0% {
-      transform:translateY(15%);
+      transform:translateY(22%);
    }
    100% {
       transform:translateY(-100%);
@@ -156,7 +153,7 @@ body::-webkit-scrollbar{
 
 .sello{
 	height:50%;
-	width:30%;
+	width:15%;
 }
 
 .separadorEstrellas{
@@ -180,32 +177,14 @@ body::-webkit-scrollbar{
 	width:200px;
 }
 
-/* .cuerpo{
-	padding:20px;
-  text-shadow:
-    -1px -1px 0 #34977f,
-    1px -1px 0 #34977f,
-    -1px 1px 0 #34977f,
-    1px 1px 0 #34977f,
-    -1px 0px 0 #34977f,
-    1px 0px 0 #34977f,
-    0px -1px 0 #34977f,
-    0px 1px 0 #34977f;
-} */
-
 .cuerpo{
 	padding:20px;
-  /* text-shadow: 1px 1px #34977f, -1px -1px #34977f; */
-  text-shadow: 
-  1px 0px #34977f,
-  -1px 0px #34977f;
-
 }
 
 .bgm{
     width:75%;
     position:fixed;
-    height:50px;
+    height:0px;
     top:1%;
     background-color:white;
     z-index:2;
@@ -214,11 +193,8 @@ body::-webkit-scrollbar{
 }
 
 #yo{
-    position:absolute;
     aspect-ratio : 1 / 1;
-    top: 5px;
-    left: 5px;
-
+    height: 100%px;
 }
 
 #botoneraReproductor{
@@ -252,15 +228,50 @@ body::-webkit-scrollbar{
     position:absolute;
 }
 #lateral{
-    margin-top:210px;
+    /* margin-top:210px; */
     width:100%;
-    top:20px;
+    top:10px;
     height:auto;
     position:sticky;
     border:solid rgb(241,185,0) 5px;
     background-color: rgb(241,185,0);
     z-index:2;
 }
+
+#cabecera{
+  height: 210px;
+  width: 100%;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.texto3d{
+  left:210px;
+  position: absolute;
+}
+
+#textoB{
+  width:600px;
+  height: 800px;
+  z-index: 4;
+  top:-330px;
+}
+
+#textoA{
+  width:400px;
+  height: 500px;
+  left:600px;
+  z-index: 5;
+  top:-120px;
+}
+
+#textoN{
+  width:1000px;
+  height: 800px;
+  z-index: 3;
+  top:-200px;
+}
+
 
 .reproductor{
   font-family: monospace;
@@ -281,6 +292,12 @@ body::-webkit-scrollbar{
   margin-right: 25%;
   margin-top:5%;
   margin-bottom:5%;
+border: 3px solid;
+          border-image-slice: 100%;
+          border-image-source: none;
+          border-image-slice: 1;
+          border-image-source: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+          background-color: #CCC;  /* from https://randombullshitgo.neocities.org/border     */
 }
 
 .blinkieBotonera{
@@ -288,8 +305,24 @@ body::-webkit-scrollbar{
     height:70%;
 }
 
-.entrada > h1{
-    text-align:center;
+.entrada h2{
+  text-align:center;
+  -webkit-animation-name: cambioColor;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function:linear;
+}
+
+.entrada h1{
+  text-align:center;
+  color:#00face;
+}
+
+.entrada p{
+  color: white;
+  text-align: justify;
+  text-shadow: 0px 0px 5px #00face;
+
 }
 
 #contactame > form{
