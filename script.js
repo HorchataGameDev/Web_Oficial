@@ -43,6 +43,9 @@ async function activarAudio(){
         segundos = "0"+segundos;
       }
       duracionTotal.innerHTML = minutos+":"+segundos;
+      if(minutos===NaN){
+        setTimeout(retry, 300);
+      }
 
       if(document.getElementById('imagenDiscoA').hasAttribute("href")){
         document.getElementById('imagenDiscoA').href ="https://youtu.be/nwjeuR5UEKE";
@@ -322,6 +325,22 @@ function alertar(texto){
 function destruirLuego(){
   var l = document.getElementsByClassName("textoFuego");
   l[0].remove();
+}
+
+function retry(){
+  num =  document.getElementById('imagenDiscoA').value;
+  var duracionTotal = document.getElementById("duracionTotal");
+  var segundos = audios[num].duration;
+  var minutos = Math.floor(segundos/60);
+  segundos = Math.floor(segundos%60);
+
+  if(minutos<10){
+    minutos = "0"+minutos;
+  }
+  if(segundos<10){
+    segundos = "0"+segundos;
+  }
+  duracionTotal.innerHTML = minutos+":"+segundos;
 }
   
 

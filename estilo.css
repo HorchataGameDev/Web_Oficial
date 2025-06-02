@@ -500,3 +500,11 @@ border: 3px solid;
 .parrot-20 {
   background-image: url('resources/orbita/20.png');
 }
+
+#paleta{
+  color:#b06d00;
+  color:#f1b900;
+  color:#e3fdfa;
+  color:#00face;
+  color:#34977f;
+}
