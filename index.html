@@ -11,129 +11,118 @@
 
   </head>
   <body>
-	<div id=contenedorLateral>
-  		<div id=lateral>
-			<a href=#sobreMi><img class=blinkieBotonera src=resources/botonera/sobremi.gif></a><br><hr>
-			<a href=#competencias><img class=blinkieBotonera src=resources/botonera/competencias.gif></a><br><hr>
-			<a href=#misJuegos><img class=blinkieBotonera src=resources/botonera/misjuegos.gif></a><br><hr>
-			<a href=#proyectos><img class=blinkieBotonera src=resources/botonera/proyectos.gif></a><br><hr>
-			<a href=#amigos><img class=blinkieBotonera src=resources/botonera/amigos.gif></a><br><hr>
-			<a href=#contactame><img class=blinkieBotonera src=resources/botonera/contactame.gif></a><br>
-			
-			<div class="reproductor">
-				<a id=imagenDiscoA target=”_blank” onmouseup="pausar()" value="0"><img class="disco" src="resources/loading.gif" id="imagenDisco" ></a>
-				<center><b id="tiempoActual">--:--</b> <input type="range" step='.1' min="0" max="100" value="5" class="sliderV" id="rangoDuracion" oninput="irAlSegundo(value)"> <b id="duracionTotal">--:--</b></center>
-				<div id="botoneraReproductor">
-					<img class="botonMusica" src="resources/reproductor/anterior.png" onclick="minutoCero()">
-					<img class="botonMusica" src="resources/reproductor/pausa.png" id="botonPausa" onclick="botonPausa()">
-					<img class="botonMusica" src="resources/reproductor/siguiente.png" onclick="siguienteCancion()">
-				</div>
-				<center><b>vol. </b><input type="range" min="0" max="100" value="50" class="sliderV" id="rangoVolumen" oninput="cambiarVolumen(value)"><b id="numeroVolumen">&nbsp;&nbsp;50%</b></center>
-				<!-- <table style="width:100%">
-					<tr><td style="text-align:left"><b>vol 100%</b></td><td style="text-align:center"><input type="range" min="0" max="100" value="50" class="sliderV" id="rangoVolumen" oninput="cambiarVolumen(value)"></td></tr>
-				</table> -->
-			</div>
-		</div>
-
-	</div>
-	<div id=principal>
-			<audio controls onended=siguienteCancion() id=bgm0 class="bgm" value="https://youtu.be/nwjeuR5UEKE">
-				<source src="resources/musica/bgm0.mp3" type="audio/mpeg">
-			</audio>
-			<audio controls onended=siguienteCancion() id=bgm1 class="bgm" value="https://youtu.be/YnAiDA46DjE">
-				<source src="resources/musica/bgm1.mp3" type="audio/mpeg">
-			</audio>
-			<audio controls onended=siguienteCancion() id=bgm2 class="bgm" value="https://youtu.be/gDmEJBE8JC8">
-				<source src="resources/musica/bgm2.mp3" type="audio/mpeg">
-			</audio>
-			
-			
-
-		<table id=titulo>
-			<tr><td class=tdIzquierda><div id=divScrolleable>
-				<div id=divSellos onclick="window.location='sellos.html';"></div>
-				<!-- <div id=divSellos onclick="window.location='https://horchatagamedev.github.io/Web_Oficial/sellos';"></div> -->
-			</div></td><td class=tdDerecha><img src=resources/nombre.gif id=titulo height=200 width=400></td></tr>
-		</table>
-
-		<div id=cuerpo>
-			<img src=resources/sparkhr.gif class=separadorEstrellas><br>
-			<center>
-				<img src="resources/ynbaile.gif" class="gifPeque">
-				<h1 class="bienvenide">bienvenide</h1>
-				<img src="resources/ynbaile.gif" class="gifPeque">
-			</center>
-			<!-- <img src=resources/welcome.gif id=bienvenida title=https://web.archive.org/web/20090830230956/http://www.geocities.com/la_corsarie/welcome.gif height=100 width=200> -->
-			<div id=sobreMi class=entrada>
-				<img src=resources/sparkhr.gif class=separadorEstrellas><br>
-				<h1>SOBRE MI</h1>
+	<div id="contenido">
+		<div id=contenedorLateral>
+			<div id=lateral>
+				<a href=#sobreMi><img class=blinkieBotonera src=resources/botonera/sobremi.gif></a><br><hr>
+				<a href=#competencias><img class=blinkieBotonera src=resources/botonera/competencias.gif></a><br><hr>
+				<a href=#misJuegos><img class=blinkieBotonera src=resources/botonera/misjuegos.gif></a><br><hr>
+				<a href=#proyectos><img class=blinkieBotonera src=resources/botonera/proyectos.gif></a><br><hr>
+				<a href=#amigos><img class=blinkieBotonera src=resources/botonera/amigos.gif></a><br><hr>
+				<a href=#contactame><img class=blinkieBotonera src=resources/botonera/contactame.gif></a><br>
 				
-				<p class=cuerpo>
-					<iframe loading="lazy" width="100%" height="100%" src="https://x.com/HorchataGameDev" style="height: 100%;" frameborder="0" scrolling="no"></iframe>
-
-					Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
-				</p>
+				<div class="reproductor">
+					<a id=imagenDiscoA target=”_blank” onmouseup="pausar()" value="0"><img class="disco" src="resources/loading.gif" id="imagenDisco" ></a>
+					<center><b id="tiempoActual">--:--</b> <input type="range" step='.1' min="0" max="100" value="5" class="sliderV" id="rangoDuracion" oninput="irAlSegundo(value)"> <b id="duracionTotal">--:--</b></center>
+					<div id="botoneraReproductor">
+						<img class="botonMusica" src="resources/reproductor/anterior.png" onclick="minutoCero()" onmousedown="this.src='resources/reproductor/anteriorP.png'" onmouseup="this.src='resources/reproductor/anterior.png'">
+						<img class="botonMusica" src="resources/reproductor/pausa.png" id="botonPausa" onclick="botonPausa()" onmousedown="this.src='resources/reproductor/pausaP.png'">
+						<img class="botonMusica" src="resources/reproductor/siguiente.png" onclick="siguienteCancion()" onmousedown="this.src='resources/reproductor/siguienteP.png'" onmouseup="this.src='resources/reproductor/siguiente.png'">
+					</div>
+					<center><b>vol. </b><input type="range" min="0" max="100" value="50" class="sliderV" id="rangoVolumen" oninput="cambiarVolumen(value)"><b id="numeroVolumen">&nbsp;&nbsp;50%</b></center>
+					<!-- <table style="width:100%">
+						<tr><td style="text-align:left"><b>vol 100%</b></td><td style="text-align:center"><input type="range" min="0" max="100" value="50" class="sliderV" id="rangoVolumen" oninput="cambiarVolumen(value)"></td></tr>
+					</table> -->
+				</div>
 			</div>
-			<div id=competencias class=entrada>
-				<img src=resources/sparkhr.gif class=separadorEstrellas><br>
-				<h1>COMPETENCIAS</h1>
-				<p class=cuerpo>
-					Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
-				</p>
-			</div>
-			<div id=misJuegos class=entrada>
-				<img src=resources/sparkhr.gif class=separadorEstrellas><br>
-				<h1>MIS JUEGOS</h1>
-				<p class=cuerpo>
-					Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
-				</p>
-			</div>
-			<div id=proyectos class=entrada>
-				<img src=resources/sparkhr.gif class=separadorEstrellas><br>
-				<h1>PROYECTOS</h1>
-				<p class=cuerpo>
-					Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
-				</p>
-			</div>
-			<div id=amigos class=entrada>
-				<img src=resources/sparkhr.gif class=separadorEstrellas><br>
-				<h1>VISITA A MIS AMIGOS</h1>
-				<h2>gente guay sexy y con talento</h2>
-				<p>necesito que TÚ <img src = https://st2.depositphotos.com/1032561/6099/i/950/depositphotos_60997147-stock-photo-hand-pointing-at-viewer.jpg height="=100px" width="100px" style="display: :inline;"> persona leyendo esto te hagas unba página para poder linkear aqui. Este espacio está reservado para oomfies</p>
-				<h2>Sitios chulos en la net</h2>
-				<p>esto son páginas que me gustan mucho no tengas miedo echales un vistazo</p>
-				<h2>The Cringe Captain</h2>
-				<p>este soy yo! este es mi botón copialo si quieres ponerme en tu página</p>
-				<a class="botonLink" href="https://horchatagamedev.github.io/Web_Oficial/"><img src="resources/botonWeb.gif"></a>
-				<textarea readonly width=420 height=200px>
-<a href="https://horchatagamedev.github.io/Web_Oficial/">
- <img src="https://horchatagamedev.github.io/Web_Oficial/resources/botonWeb.gif">
-</a>
-				</textarea><br>
 
+		</div>
+		<div id=principal>
+				<audio controls onended=siguienteCancion() id=bgm0 class="bgm" value="https://youtu.be/nwjeuR5UEKE">
+					<source src="resources/musica/bgm0.mp3" type="audio/mpeg">
+				</audio>
+				<audio controls onended=siguienteCancion() id=bgm1 class="bgm" value="https://youtu.be/YnAiDA46DjE">
+					<source src="resources/musica/bgm1.mp3" type="audio/mpeg">
+				</audio>
+				<audio controls onended=siguienteCancion() id=bgm2 class="bgm" value="https://youtu.be/gDmEJBE8JC8">
+					<source src="resources/musica/bgm2.mp3" type="audio/mpeg">
+				</audio>
+				
+				
 
+			<table id=titulo>
+				<tr><td class=tdIzquierda><div id=divScrolleable>
+					<div id=divSellos onclick="window.location='sellos.html';"></div>
+					<!-- <div id=divSellos onclick="window.location='https://horchatagamedev.github.io/Web_Oficial/sellos';"></div> -->
+				</div></td><td class=tdDerecha><img src=resources/nombre.gif id=titulo height=200 width=400></td></tr>
+			</table>
 
-				<p class=cuerpo>
+			<div id=cuerpo>
+				<img src=resources/sparkhr.gif class=separadorEstrellas><br>
+				<center>
+					<img src="resources/ynbaile.gif" class="gifPeque">
+					<h1 class="bienvenide">bienvenide</h1>
+					<img src="resources/ynbaile.gif" class="gifPeque">
+				</center>
+				<!-- <img src=resources/welcome.gif id=bienvenida title=https://web.archive.org/web/20090830230956/http://www.geocities.com/la_corsarie/welcome.gif height=100 width=200> -->
+				<div id=sobreMi class=entrada>
+					<img src=resources/sparkhr.gif class=separadorEstrellas><br>
+					<h1>SOBRE MI</h1>
 					
+					<p class=cuerpo>
+						Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
+					</p>
+				</div>
+				<div id=competencias class=entrada>
+					<img src=resources/sparkhr.gif class=separadorEstrellas><br>
+					<h1>COMPETENCIAS</h1>
+					<p class=cuerpo>
+						Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
+					</p>
+				</div>
+				<div id=misJuegos class=entrada>
+					<img src=resources/sparkhr.gif class=separadorEstrellas><br>
+					<h1>MIS JUEGOS</h1>
+					<p class=cuerpo>
+						Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
+					</p>
+				</div>
+				<div id=proyectos class=entrada>
+					<img src=resources/sparkhr.gif class=separadorEstrellas><br>
+					<h1>PROYECTOS</h1>
+					<p class=cuerpo>
+						Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
+					</p>
+				</div>
+				<div id=amigos class=entrada>
+					<img src=resources/sparkhr.gif class=separadorEstrellas><br>
+					<h1>VISITA A MIS AMIGOS</h1>
+					<h2>gente guay sexy y con talento</h2>
+					<p>necesito que TÚ <img src = https://st2.depositphotos.com/1032561/6099/i/950/depositphotos_60997147-stock-photo-hand-pointing-at-viewer.jpg height="=100px" width="100px" style="display: :inline;"> persona leyendo esto te hagas unba página para poder linkear aqui. Este espacio está reservado para oomfies</p>
+					<h2>Sitios chulos en la net</h2>
+					<p>esto son páginas que me gustan mucho no tengas miedo echales un vistazo</p>
+					<h2>The Cringe Captain</h2>
+					<p>este soy yo! este es mi botón copialo si quieres ponerme en tu página</p>
+					<img id="miBoton" src="resources/botonWeb.gif">
+					<textarea id=codigoBoton readonly width=420 height=200px><a href="https://horchatagamedev.github.io/Web_Oficial/"> <img src="https://horchatagamedev.github.io/Web_Oficial/resources/botonWeb.gif"> </a></textarea><center><button onclick=navigator.clipboard.writeText(document.getElementById('codigoBoton').value);alertar('HellYeah');>copiar</button></center>
 					
-				</p>
+				</div>
+				<div id=contactame class=entrada>
+					<img src=resources/sparkhr.gif class=separadorEstrellas><br>
+					<h1>CONTACTA CONMIGO</h1>
+					<p class=cuerpo>
+						Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
+					</p>
+					<!-- <form>
+						<input type=text placeholder=nombre name=nombre>
+						<input type=text placeholder=apellidos name=apellidos><br>
+						<input type=mail placeholder=correo name=correo>
+						<input type=phone placeholder=telefono name=telefono><br>
+						<textarea maxlength=2000 name=mensaje height=200 width=420 placeholder="escribe aqui tu mensaje" id=mensaje></textarea><br>
+						<input type=submit value=enviar>
+					</form> -->
+				</div>
 			</div>
-			<div id=contactame class=entrada>
-				<img src=resources/sparkhr.gif class=separadorEstrellas><br>
-				<h1>CONTACTA CONMIGO</h1>
-				<p class=cuerpo>
-					Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
-				</p>
-				<!-- <form>
-					<input type=text placeholder=nombre name=nombre>
-					<input type=text placeholder=apellidos name=apellidos><br>
-					<input type=mail placeholder=correo name=correo>
-					<input type=phone placeholder=telefono name=telefono><br>
-					<textarea maxlength=2000 name=mensaje height=200 width=420 placeholder="escribe aqui tu mensaje" id=mensaje></textarea><br>
-					<input type=submit value=enviar>
-				</form> -->
-			</div>
-			
 		</div>
 	</div>
 	<img src=resources/perfil.png class=fotoPerfil id=yo>

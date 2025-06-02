@@ -1,7 +1,16 @@
+@font-face {
+    font-family: "Fuego";
+    src: url(resources/Hellbone-Demo.otf) format("truetype");
+}
+p.customfont { 
+    font-family: "My Custom Font", Verdana, Tahoma;
+}
+
 body{
 	background-image: url("resources/fondo.png");
 	background-repeat: no-repeat;
 	background-size: cover;
+  overflow: auto;
 }
 
 body::-webkit-scrollbar{
@@ -15,7 +24,11 @@ body::-webkit-scrollbar{
 	width:75%;
 	margin:5% 5% 5% 20%;
     z-index:2;
-    color: #00face;
+    /* color: #00face; */
+    color: black;
+}
+#principal h1{
+  text-shadow: 5px 5px 5px #00face;
 }
 
 .bienvenide{
@@ -80,9 +93,44 @@ body::-webkit-scrollbar{
 	border: solid rgb(241,185,0) 5px;
 }
 
+@keyframes texto-alerta {
+ 0% { transform: translateX(0)}
+ 1% { transform: translateY(0px); opacity: 1;}
+ 10% { transform: translateX(3px)}
+ 20% { transform: translateX(-3px)}
+ 30% { transform: translateX(3px)}
+ 40% { transform: translateX(-3px)}
+ 50% { transform: translateX(3px)}
+ 60% { transform: translateX(-3px)}
+ 70% { transform: translateX(3px)}
+ 80% { transform: translateX(-3px)}
+ 90% { transform: translateX(3px)}
+ 99% { transform: translateY(50px); opacity: 0;}
+ 100% { transform: translateX(0);}
+}
+
+
+.textoFuego{
+  -webkit-animation-name: texto-alerta;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function:linear;
+  
+  font-family:Fuego;
+  font-weight: bolder;
+  color:red;
+  text-shadow: 3px 3px yellow;
+  letter-spacing: 5px;
+  pointer-events: none;
+}
+
+
+
 #divScrolleable{
 	overflow:hidden;
-	height:100px;
+  top: 5px;
+  left: 5px;
+	height: 100px;
 	width:80%;
 	border: 30px solid rgb(241,185,0);
 	border-image: url("resources/sparkborder.gif");
@@ -132,8 +180,26 @@ body::-webkit-scrollbar{
 	width:200px;
 }
 
+/* .cuerpo{
+	padding:20px;
+  text-shadow:
+    -1px -1px 0 #34977f,
+    1px -1px 0 #34977f,
+    -1px 1px 0 #34977f,
+    1px 1px 0 #34977f,
+    -1px 0px 0 #34977f,
+    1px 0px 0 #34977f,
+    0px -1px 0 #34977f,
+    0px 1px 0 #34977f;
+} */
+
 .cuerpo{
 	padding:20px;
+  /* text-shadow: 1px 1px #34977f, -1px -1px #34977f; */
+  text-shadow: 
+  1px 0px #34977f,
+  -1px 0px #34977f;
+
 }
 
 .bgm{
@@ -149,6 +215,7 @@ body::-webkit-scrollbar{
 
 #yo{
     position:absolute;
+    aspect-ratio : 1 / 1;
     top: 5px;
     left: 5px;
 
@@ -156,6 +223,7 @@ body::-webkit-scrollbar{
 
 #botoneraReproductor{
   text-align: center;
+  image-rendering: pixelated;
 }
 
 /*
@@ -179,13 +247,13 @@ body::-webkit-scrollbar{
 }
 */
 #contenedorLateral{
-    height:360%;
-    width:100%;
+    height: 19%;
+    width:19%;
     position:absolute;
 }
 #lateral{
     margin-top:210px;
-    width:19%;
+    width:100%;
     top:20px;
     height:auto;
     position:sticky;
@@ -253,7 +321,7 @@ body::-webkit-scrollbar{
 .sliderV {
   -webkit-appearance: none;
   height: 5px;
-  background-color: #3a3a3a;
+  background-color: #34977f;
   margin-bottom:4%;
   margin-top:4%;
 }
@@ -263,22 +331,22 @@ body::-webkit-scrollbar{
   appearance: none;
   width: 20px;
   height: 20px;
-  background-image: url("resources/reproductor/bola.png");
+  background-image: url("resources/reproductor/bola.gif");
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  image-rendering: pixelated;
 }
 
 .sliderV::-moz-range-thumb {
   width: 20px;
   height: 20px;
-  background-image: url("resources/reproductor/bola.png");
+  background-image: url("resources/reproductor/bola.gif");
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  image-rendering: pixelated;
 }
-
-
 
 .muestraSellos{
   margin: auto;
@@ -291,6 +359,20 @@ body::-webkit-scrollbar{
   padding: 20px;
 }
 
+#miBoton{
+  display: block;
+  margin: auto;
+  height: 20%;
+  width: 20%;
+  image-rendering: pixelated;
+}
+
+#codigoBoton{
+  resize: none;
+  width: 50%;
+  height: 50px;
+  margin: 30px 25% 10px 25%;
+}
 
 
 

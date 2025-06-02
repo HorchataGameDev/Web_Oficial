@@ -24,6 +24,14 @@ function activarAudio(){
 
 // CANCIONES: Musica Magica de Isadora Juice, DIAMONDS de Princess Princess y TEAM ZISSOU DE SEU JORGE
 // MODO OSCURO: The ocean de Linna Olsson, Under a monochromatic sky y FRAGMENTS DE MISHA PANFILOV
+document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight+30)+"px");
+// window.onresize = cambiarTam;
+// function cambiarTam(){
+//   document.getElementById('contenedorLateral').setAttribute("style","height:"+document.getElementById('contenido').clientHeight+"px");
+// }
+window.onresize = function() {
+    document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight+30)+"px");
+ }
 
 audios = document.getElementsByClassName("bgm");
 audios[0].volume = 0.5;
@@ -187,7 +195,7 @@ function irAlSegundo(segundo){
 }
 
 //Por cada 3 sellos la animacion dura x segundos más
-var sellos= 49; //Estupido javascript no sabe contar ficheros
+var sellos= 54; //Estupido javascript no sabe contar ficheros
 var contenedorSellos = document.getElementById("divSellos");
 for(var i=1;i<=sellos;i++){
     contenedorSellos.innerHTML = contenedorSellos.innerHTML+"<img class=sello src=resources/sellos/"+i+".gif>";
@@ -310,6 +318,29 @@ async function chequeos(){
 
   setTimeout(chequeos, 300);
 }
+
+function alertar(texto){
+  //crea un texto pequeñito en la posición del cursor que se va
+  const e = document.createElement("h1");
+  e.classList.add("textoFuego");
+  document.getElementById("principal").appendChild(e);
+
+    // get the coordinates of the mouse
+  var x = event.clientX;     // get the horizontal coordinate
+  var y = event.clientY;   // get the vertical coordinate
+
+  // position newthing using the coordinates
+  e.style.position = "fixed"; // fixes el relative to page. Could use absolute.
+  e.style.left = (x+Math.random() * (80- (-80)) + (-80)) + "px";
+  e.style.top = (y+Math.random() * (80- (-80)) + (-80)) + "px";
+  e.innerHTML=texto;
+  setTimeout(() => destruirLuego(), 500);
+}
+function destruirLuego(){
+  var l = document.getElementsByClassName("textoFuego");
+  l[0].remove();
+}
+  
 
 // if(!audio.paused){
 //   var duracionTotal = document.getElementById("duracionTotal");
