@@ -32,7 +32,7 @@ async function activarAudio(){
       document.getElementById('imagenDisco').src = "resources/musica/disco0.png";
       document.getElementById('imagenDiscoA').value = 0;
       var duracionTotal = document.getElementById("duracionTotal");
-      var segundos = audios[0].duration;
+      var segundos = document.getElementsByClassName("bgm")[0].duration;
       var minutos = Math.floor(segundos/60);
       segundos = Math.floor(segundos%60);
 
@@ -43,9 +43,9 @@ async function activarAudio(){
         segundos = "0"+segundos;
       }
       duracionTotal.innerHTML = minutos+":"+segundos;
-      if(minutos===NaN){
-        setTimeout(retry, 300);
-      }
+      // if(minutos===NaN){
+      //   setTimeout(retry, 300);
+      // }
 
       if(document.getElementById('imagenDiscoA').hasAttribute("href")){
         document.getElementById('imagenDiscoA').href ="https://youtu.be/nwjeuR5UEKE";
@@ -181,7 +181,7 @@ function irAlSegundo(segundo){
 }
 
 //Por cada 3 sellos la animacion dura x segundos más
-var sellos= 54; //Estupido javascript no sabe contar ficheros
+var sellos= 83; //Estupido javascript no sabe contar ficheros
 var contenedorSellos = document.getElementById("divSellos");
 for(var i=1;i<=sellos;i++){
     contenedorSellos.innerHTML = contenedorSellos.innerHTML+"<img class=sello src=resources/sellos/"+i+".gif>";
@@ -327,21 +327,22 @@ function destruirLuego(){
   l[0].remove();
 }
 
-function retry(){
-  num =  document.getElementById('imagenDiscoA').value;
-  var duracionTotal = document.getElementById("duracionTotal");
-  var segundos = audios[num].duration;
-  var minutos = Math.floor(segundos/60);
-  segundos = Math.floor(segundos%60);
+// function retry(){
+//   console.log("retried");
+//   num =  document.getElementById('imagenDiscoA').value;
+//   var duracionTotal = document.getElementById("duracionTotal");
+//   var segundos = audios[num].duration;
+//   var minutos = Math.floor(segundos/60);
+//   segundos = Math.floor(segundos%60);
 
-  if(minutos<10){
-    minutos = "0"+minutos;
-  }
-  if(segundos<10){
-    segundos = "0"+segundos;
-  }
-  duracionTotal.innerHTML = minutos+":"+segundos;
-}
+//   if(minutos<10){
+//     minutos = "0"+minutos;
+//   }
+//   if(segundos<10){
+//     segundos = "0"+segundos;
+//   }
+//   duracionTotal.innerHTML = minutos+":"+segundos;
+// }
   
 
 // if(!audio.paused){

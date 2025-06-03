@@ -248,6 +248,7 @@ body::-webkit-scrollbar{
 .texto3d{
   left:210px;
   position: absolute;
+  pointer-events: none;
 }
 
 #textoB{
@@ -316,6 +317,7 @@ border: 3px solid;
 .entrada h1{
   text-align:center;
   color:#00face;
+  font-size: 40px;
 }
 
 .entrada p{
@@ -406,6 +408,15 @@ border: 3px solid;
   height: 50px;
   margin: 30px 25% 10px 25%;
 }
+
+.gifsTexto{
+
+}
+.gifsTexto:last-child {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
 
 
 
