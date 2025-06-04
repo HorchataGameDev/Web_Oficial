@@ -171,7 +171,9 @@ a{
   position: relative;
 }
 .gifsTexto{
+  height: 40px;
   aspect-ratio: 1/1;
+  padding: 0px 5px 0px 5px;
 }
 
 .gifsTexto:last-child {

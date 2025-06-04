@@ -63,7 +63,6 @@ border: 3px solid;
   color: white;
   text-align: justify;
   text-shadow: 0px 0px 5px #00face;
-
 }
 
 #contactame > form{
@@ -95,9 +94,11 @@ border: 3px solid;
 .sliderV {
   -webkit-appearance: none;
   height: 5px;
-  background-color: #34977f;
+  border: solid 3px #34977f;
+  background-color: #00face;
   margin-bottom:4%;
   margin-top:4%;
+  border-radius: 20px;
 }
 
 .sliderV::-webkit-slider-thumb {
@@ -216,6 +217,18 @@ h2{
     color:rgb(241,185,0);
     font-size: 30px;
     text-shadow: 1px 1px 0 #00face, 1px 2px 5px #34977f, 1px -2px 5px #34977f;;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0px 50px 0px 100px;
+  text-indent: -50px;
+  line-height: 30px;
+  color: white;
+  text-shadow: 0px 0px 5px #00face;
+}
+li{
+  padding: 2px 0px 2px 0px;
 }
 /* .hovertext{
     display: flex;

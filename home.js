@@ -33,11 +33,11 @@ async function activarAudio(){
   try{
     audios[0].play();
 
-    
     if(audios[0].paused){
         setTimeout(activarAudio, 500);
     }
     else{
+
       document.getElementById('imagenDisco').src = "resources/musica/disco0.png";
       document.getElementById('imagenDiscoA').value = 0;
       var duracionTotal = document.getElementById("duracionTotal");
@@ -60,8 +60,9 @@ async function activarAudio(){
         document.getElementById('imagenDiscoA').href ="https://youtu.be/nwjeuR5UEKE";
       }
       else{
-        document.getElementById('imagenDiscoA').setAttribute("href", audios[0].value)
+        document.getElementById('imagenDiscoA').setAttribute("href", audios[0].dataset.url)
       }
+
     }
   }
   catch(DOMException){
@@ -110,7 +111,7 @@ function siguienteCancion(){
   duracionTotal.innerHTML = minutos+":"+segundos;
 
   document.getElementById('imagenDiscoA').value = num;
-  document.getElementById('imagenDiscoA').href =audios[num].value;
+  document.getElementById('imagenDiscoA').href =audios[num].dataset.url;
   document.getElementById('imagenDisco').src = "resources/musica/disco"+num+".png";
   document.getElementById('botonPausa').src="resources/reproductor/pausa.png";
 }
@@ -143,7 +144,7 @@ function minutoCero(){
     duracionTotal.innerHTML = minutos+":"+segundos;
 
     document.getElementById('imagenDiscoA').value = num;
-    document.getElementById('imagenDiscoA').href =audios[num].value;
+    document.getElementById('imagenDiscoA').href =audios[num].dataset.url;
     document.getElementById('imagenDisco').src = "resources/musica/disco"+num+".png";
     document.getElementById('botonPausa').src="resources/reproductor/pausa.png";
   }

@@ -30,7 +30,7 @@
 				<a href=#contactame><img class=blinkieBotonera src=resources/botonera/contactame.gif></a><br>
 				
 				<div class="reproductor">
-					<a id=imagenDiscoA target=”_blank” onmouseup="pausar()" value="0"><img class="disco" src="resources/loading.gif" id="imagenDisco" ></a>
+					<a id=imagenDiscoA target=”_blank” onmouseup="pausar()" value="0" href="error"><img class="disco" src="resources/loading.gif" id="imagenDisco" ></a>
 					<center><b id="tiempoActual">--:--</b> <input type="range" step='.1' min="0" max="100" value="5" class="sliderV" id="rangoDuracion" oninput="irAlSegundo(value)"> <b id="duracionTotal">--:--</b></center>
 					<div id="botoneraReproductor">
 						<img class="botonMusica" src="resources/reproductor/anterior.png" onclick="minutoCero()" onmousedown="this.src='resources/reproductor/anteriorP.png'" onmouseup="this.src='resources/reproductor/anterior.png'">
@@ -46,14 +46,14 @@
 
 		</div>
 		<div id=principal>
-				<audio controls onended=siguienteCancion() id=bgm0 class="bgm" value="https://youtu.be/nwjeuR5UEKE">
+				<audio controls onended=siguienteCancion() id=bgm0 class="bgm" data-url="https://youtu.be/nwjeuR5UEKE">
 					<source src="resources/musica/bgm0.mp3" type="audio/mpeg">
 				</audio>
-				<audio controls onended=siguienteCancion() id=bgm1 class="bgm" value="https://youtu.be/YnAiDA46DjE">
-					<source src="resources/musica/bgm1.mp3" type="audio/mpeg">
-				</audio>
-				<audio controls onended=siguienteCancion() id=bgm2 class="bgm" value="https://youtu.be/gDmEJBE8JC8">
+				<audio controls onended=siguienteCancion() id=bgm2 class="bgm" data-url="https://youtu.be/gDmEJBE8JC8">
 					<source src="resources/musica/bgm2.mp3" type="audio/mpeg">
+				</audio>
+								<audio controls onended=siguienteCancion() id=bgm1 class="bgm" data-url="https://youtu.be/YnAiDA46DjE">
+					<source src="resources/musica/bgm1.mp3" type="audio/mpeg">
 				</audio>
 
 			<div id=cuerpo>
@@ -70,7 +70,7 @@
 				<!-- <img src=resources/welcome.gif id=bienvenida title=https://web.archive.org/web/20090830230956/http://www.geocities.com/la_corsarie/welcome.gif height=100 width=200> -->
 				<div id=sobreMi class=entrada>
 					<img src=resources/sparkhr.gif class=separadorEstrellas><br>
-					<h1>SOBRE MI</h1>
+					<h1><img src=resources/gifs_texto/witchcaul.gif class="gifsTexto">SOBRE MI<img src=resources/gifs_texto/witchcaul.gif class="gifsTexto"></h1>
 					<p class=cuerpo>
 						Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis.<img src="resources/sobreMi/wonder.png" class="imagenDerecha"> Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
 					</p>
@@ -80,14 +80,14 @@
 				</div>
 				<div id=competencias class=entrada>
 					<img src=resources/sparkhr.gif class=separadorEstrellas><br>
-					<h1>COMPETENCIAS</h1>
+					<h1><img src=resources/gifs_texto/jumpingtrout.gif class="gifsTexto">COMPETENCIAS<img src=resources/gifs_texto/jumpingtrout.gif class="gifsTexto"></h1>
 					<p class=cuerpo>
 						Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
 					</p>
 				</div>
 				<div id=misJuegos class=entrada>
 					<img src=resources/sparkhr.gif class=separadorEstrellas><br>
-					<h1>MIS JUEGOS</h1>
+					<h1><img src=resources/gifs_texto/madotsuki_game.gif class="gifsTexto">MIS JUEGOS<img src=resources/gifs_texto/madotsuki_game.gif class="gifsTexto"></h1>
 					<p class=cuerpo>
 						Integer placerat id nisi et vestibulum. Cras maximus velit felis, ut porta magna iaculis ac. Vestibulum finibus enim ut lectus lacinia mollis. Proin pharetra purus eu quam lacinia, id luctus arcu imperdiet. In elit nunc, placerat ut tortor quis, commodo tincidunt nibh. Proin placerat nulla ac urna aliquam, a ornare odio ultricies. In vestibulum lobortis orci. Ut quis mattis quam. Etiam luctus sapien vitae eleifend laoreet. Proin finibus dictum accumsan. Cras ullamcorper pharetra tortor a condimentum. Vestibulum quam eros, dapibus nec massa quis, iaculis auctor mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sem ligula, lobortis laoreet turpis nec, vehicula vestibulum magna. Proin diam arcu, dictum ac turpis vel, pretium porttitor velit.
 					</p>
@@ -105,29 +105,29 @@
 					<h2>gente guay sexy y con talento</h2>
 					<p class="cuerpo">Este es el espacio para los botones de los oomfies por eso quiero que TÚ <img src = https://st2.depositphotos.com/1032561/6099/i/950/depositphotos_60997147-stock-photo-hand-pointing-at-viewer.jpg height="=100px" width="100px" style="display: :inline;"> persona leyendo esto te hagas una página para poder linkear aqui</p>
 					<h2>Otras páginas que me gustan</h2>
-					
+
+					<p class="cuerpo">Sitios donde pasarlo bien online!</p>
 					<ul>
-						<li><a target="_blank" href="https://sciencevsmagic.net/fractal/">FRACTAL MACHINE</a>Es un programa que crea fractales animados.</li>
-						<li><a target="_blank" href="https://3dtext2gif.com">3dtext2gif</a> hace lo que dice, la he usado para la cabecera de la página</li>
-						<li><a target="_blank" href="https://halo-head.com/comic/welcome-to-halo-head/">HELLO FROM HALO HEAD</a> es un webcomic que llevo leyendo unos años.</li>
-						<li><a target="_blank" href="https://randombullshitgo.neocities.org/">randombullshitGO!</a> tiene recursos chulos</li>
-						<li><a target="_blank" href="https://noclip.website/">noclip</a> mapas</li>
-						<li><a target="_blank" href="https://codepen.io/">CodePen</a> es donde robo efectos chulos</li>
-						<li><a target="_blank" href="https://www.3dgifmaker.com/obj-to-gif">3D GIF Maker</a> adwadaw</li>
-						<li><a target="_blank" href="https://www.w3schools.com/"></a></li>
-						<li><a target="_blank" href="https://chir.ag/projects/name-that-color/"></a></li>
-						<li><a target="_blank" href="https://www.cameronsworld.net/"></a></li>
-						<li><a target="_blank" href="https://stellarium-web.org/"></a></li>
-						<li><a target="_blank" href="https://www.mf2fm.com/rv/"></a></li>
-						<li><a target="_blank" href="https://oldgamesdownload.com/"></a></li>
-						<li><a target="_blank" href="https://www.reddit.com/r/neocities/comments/1gwqgh2/comment/lybe0md/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button"></a></li>
-						<li><a target="_blank" href=""></a></li>
-						<li><a target="_blank" href=""></a></li>
-						<li><a target="_blank" href=""></a></li>
-						<li><a target="_blank" href=""></a></li>
-						<li><a target="_blank" href=""></a></li>
+						<li><a target="_blank" href="https://sciencevsmagic.net/fractal/">FRACTAL MACHINE</a><br>Es un programa que crea fractales animados.</li>
+						<li><a target="_blank" href="https://noclip.website/">noclip</a><br>La página donde puedes moverte por mapas de videojuegos viejos</li>
+						<li><a target="_blank" href="https://halo-head.com/comic/welcome-to-halo-head/">HELLO FROM HALO HEAD</a><br>Es un webcomic que llevo leyendo desde hace unos años lo recomiendo mucho.</li>
+						<li><a target="_blank" href="https://oldgamesdownload.com/">Old Games Download</a><br>Un archivo digital de juegos de 1970 a 2010.</li>
+						<li><a target="_blank" href="https://www.cameronsworld.net/">Cameron's World</a><br>Es un homenaje muy chulo a los blogs antigues de internet y el estilo de las páginas que estoy intentando copiar y no me sale.</li>
+
+						<li><a target="_blank" href="https://www.reddit.com/r/neocities/comments/1gwqgh2/comment/lybe0md/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button"></a><br></li>
 					</ul>
 					<p class="cuerpo">Páginas con recursos, tutoriales, gráficos y cosas</p>
+					<ul>
+						<li><a target="_blank" href="https://3dtext2gif.com">3dtext2gif</a><br>Hace lo que dice, la he usado para la cabecera de la página</li>
+						<li><a target="_blank" href="https://randombullshitgo.neocities.org/">randombullshitGO!</a><br>Tiene recursos chulos</li>
+						<li><a target="_blank" href="https://codepen.io/">CodePen</a><br>es donde robo efectos chulos</li>
+						<li><a target="_blank" href="https://www.3dgifmaker.com/obj-to-gif">3D GIF Maker</a><br>adwadaw</li>
+						<li><a target="_blank" href="https://www.w3schools.com/">W3Schools</a><br></li>
+						<li><a target="_blank" href="https://chir.ag/projects/name-that-color/">a</a><br></li>
+						
+						<li><a target="_blank" href="https://stellarium-web.org/">c</a><br></li>
+						<li><a target="_blank" href="https://www.mf2fm.com/rv/">d</a><br></li>
+					</ul>
 					
 					<h2>The Cringe Captain</h2>
 					<p class="cuerpo">Este soy yo! Puedes copiar mi botón y ponerlo en tu página si quieres. Forma parte de la HorchataWideWeb!!!!</p>
@@ -154,6 +154,6 @@
 		</div>
 	</div>
 	<script src="script.js"></script>
-	<script src="home.js"></script>
+	<script src="home.js" defer></script>
   </body>
 </html>
