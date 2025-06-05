@@ -20,6 +20,16 @@
 // CANCIONES: Musica Magica de Isadora Juice, DIAMONDS de Princess Princess y TEAM ZISSOU DE SEU JORGE
 // MODO OSCURO: The ocean de Linna Olsson, Under a monochromatic sky y FRAGMENTS DE MISHA PANFILOV
 
+// if(document.cookie==""){ si la cookie está vacía document.cookie="";
+//   alert("awwaw");
+// }
+
+if(document.cookie!=""){
+  alert("awwaw");
+}
+document.cookie="a";
+console.log("COOOKIE = "+document.cookie);
+
 document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight-210)+"px");
 window.onresize = function() {
     document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight-210)+"px");

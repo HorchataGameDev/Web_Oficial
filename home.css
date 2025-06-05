@@ -39,19 +39,29 @@
   z-index:2;
 }
 
+@-webkit-keyframes rotar {
+   0% {
+      transform: rotate(0);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
 .disco{
   width:50%;
   aspect-ratio : 1 / 1;
   margin-left: 25%;
   margin-right: 25%;
   margin-top:5%;
-  margin-bottom:5%;
+  margin-bottom:0%;
 border: 3px solid;
           border-image-slice: 100%;
           border-image-source: none;
           border-image-slice: 1;
           border-image-source: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-          background-color: #CCC;  /* from https://randombullshitgo.neocities.org/border     */
+          background-color: #CCC;  
+          /* from https://randombullshitgo.neocities.org/border     */
 }
 
 .blinkieBotonera{
@@ -60,7 +70,7 @@ border: 3px solid;
 }
 
 .entrada p{
-  color: white;
+  color:#e3fdfa;
   text-align: justify;
   text-shadow: 0px 0px 5px #00face;
 }
