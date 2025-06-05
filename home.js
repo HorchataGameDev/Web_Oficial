@@ -50,18 +50,18 @@ async function activarAudio(){
 
       document.getElementById('imagenDisco').src = "resources/musica/disco0.png";
       document.getElementById('imagenDiscoA').value = 0;
-      var duracionTotal = document.getElementById("duracionTotal");
-      var segundos = document.getElementsByClassName("bgm")[0].duration;
-      var minutos = Math.floor(segundos/60);
-      segundos = Math.floor(segundos%60);
+      // var duracionTotal = document.getElementById("duracionTotal");
+      // var segundos = document.getElementsByClassName("bgm")[0].duration;
+      // var minutos = Math.floor(segundos/60);
+      // segundos = Math.floor(segundos%60);
 
-      if(minutos<10){
-        minutos = "0"+minutos;
-      }
-      if(segundos<10){
-        segundos = "0"+segundos;
-      }
-      duracionTotal.innerHTML = minutos+":"+segundos;
+      // if(minutos<10){
+      //   minutos = "0"+minutos;
+      // }
+      // if(segundos<10){
+      //   segundos = "0"+segundos;
+      // }
+      duracionTotal.innerHTML = "05:19";
       // if(minutos===NaN){
       //   setTimeout(retry, 300);
       // }
@@ -234,6 +234,14 @@ async function chequeos(){
     segundos = "0"+segundos;
   }
   tiempoActual.innerHTML = minutos+":"+segundos;
+
+  // document.cookie = num+";"+audios[num].currentTime+";";
+  // if(audios[num].paused){
+  //   document.cookie = document.cookie+"T;"
+  // }
+  // else{
+  //   document.cookie = document.cookie+"F;"
+  // }
 
   rangoDuracion.value=(audios[num].currentTime/audios[num].duration)*100;
 
