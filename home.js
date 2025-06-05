@@ -25,10 +25,16 @@
 // }
 
 if(document.cookie!=""){
-  alert("awwaw");
+  alert("No hay cookies");
 }
+else{
+  alert("Se ha encontrado la cookie "+document.cookie);
+}
+
 document.cookie="a";
-console.log("COOOKIE = "+document.cookie);
+alert("Se ha guardado la cookie "+document.cookie);
+
+// console.log("COOOKIE = "+document.cookie);
 
 document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight-210)+"px");
 window.onresize = function() {
