@@ -24,14 +24,14 @@
 //   alert("awwaw");
 // }
 
-if(document.cookie!=""){
+if(document.cookie==""){
   alert("No hay cookies");
 }
 else{
   alert("Se ha encontrado la cookie "+document.cookie);
 }
 
-document.cookie="a";
+document.cookie = "cookie=TEXTO COOKIE; expires=Thu, 18 Dec 2040 12:00:00 UTC;";
 alert("Se ha guardado la cookie "+document.cookie);
 
 // console.log("COOOKIE = "+document.cookie);
