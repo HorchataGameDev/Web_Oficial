@@ -1,41 +1,3 @@
-// function retry(){
-//   console.log("retried");
-//   num =  document.getElementById('imagenDiscoA').value;
-//   var duracionTotal = document.getElementById("duracionTotal");
-//   var segundos = audios[num].duration;
-//   var minutos = Math.floor(segundos/60);
-//   segundos = Math.floor(segundos%60);
-
-//   if(minutos<10){
-//     minutos = "0"+minutos;
-//   }
-//   if(segundos<10){
-//     segundos = "0"+segundos;
-//   }
-//   duracionTotal.innerHTML = minutos+":"+segundos;
-// }
-
-
-
-// CANCIONES: Musica Magica de Isadora Juice, DIAMONDS de Princess Princess y TEAM ZISSOU DE SEU JORGE
-// MODO OSCURO: The ocean de Linna Olsson, Under a monochromatic sky y FRAGMENTS DE MISHA PANFILOV
-
-// if(document.cookie==""){ si la cookie está vacía document.cookie="";
-//   alert("awwaw");
-// }
-
-if(document.cookie==""){
-  alert("No hay cookies");
-}
-else{
-  alert("Se ha encontrado la cookie "+document.cookie);
-}
-
-document.cookie = "cookie=TEXTO COOKIE; expires=Thu, 18 Dec 2040 12:00:00 UTC;";
-alert("Se ha guardado la cookie "+document.cookie);
-
-// console.log("COOOKIE = "+document.cookie);
-
 document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight-210)+"px");
 window.onresize = function() {
     document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight-210)+"px");
@@ -52,26 +14,41 @@ async function activarAudio(){
     if(audios[0].paused){
         setTimeout(activarAudio, 500);
     }
-    else{
+    else if(sessionStorage.getItem("cancion")!=null){
 
+      audios[0].pause();
+      boton=document.getElementById('botonPausa');
+      num = sessionStorage.getItem("cancion");
+      document.getElementById('imagenDiscoA').value = num;
+      tiempo = sessionStorage.getItem("tiempo");
+      pausado = sessionStorage.getItem("pausado");
+      volumen = sessionStorage.getItem("volumen");
+
+      document.getElementById('rangoDuracion').value = sessionStorage.getItem("tiempoRango");
+      document.getElementById('duracionTotal').innerHTML = sessionStorage.getItem("tiempoTexto");
+
+
+      audios[num].currentTime = tiempo;
+      audios[num].volume = volumen;
+      document.getElementById("rangoVolumen").value=volumen*100;
+      cambiarVolumen(volumen*100);
+
+      if(pausado=="true"){
+        audios[num].pause();
+        boton.src="resources/reproductor/play.png";
+      }
+      else{
+        audios[num].play();
+        boton.src="resources/reproductor/pausa.png";
+      }
+      document.getElementById('imagenDiscoA').href =audios[num].dataset.url;
+      document.getElementById('imagenDisco').src = "resources/musica/disco"+num+".png";
+    }
+    else{
       document.getElementById('imagenDisco').src = "resources/musica/disco0.png";
       document.getElementById('imagenDiscoA').value = 0;
-      // var duracionTotal = document.getElementById("duracionTotal");
-      // var segundos = document.getElementsByClassName("bgm")[0].duration;
-      // var minutos = Math.floor(segundos/60);
-      // segundos = Math.floor(segundos%60);
-
-      // if(minutos<10){
-      //   minutos = "0"+minutos;
-      // }
-      // if(segundos<10){
-      //   segundos = "0"+segundos;
-      // }
-      duracionTotal.innerHTML = "05:19";
-      // if(minutos===NaN){
-      //   setTimeout(retry, 300);
-      // }
-
+      document.getElementById('duracionTotal').innerHTML = "05:19";
+      sessionStorage.setItem("tiempoTexto","05:19");
       if(document.getElementById('imagenDiscoA').hasAttribute("href")){
         document.getElementById('imagenDiscoA').href ="https://youtu.be/nwjeuR5UEKE";
       }
@@ -82,6 +59,7 @@ async function activarAudio(){
     }
   }
   catch(DOMException){
+    console.log(DOMException);
     setTimeout(activarAudio, 500);
   }
 }
@@ -130,6 +108,7 @@ function siguienteCancion(){
   document.getElementById('imagenDiscoA').href =audios[num].dataset.url;
   document.getElementById('imagenDisco').src = "resources/musica/disco"+num+".png";
   document.getElementById('botonPausa').src="resources/reproductor/pausa.png";
+  sessionStorage.setItem("tiempoTexto",document.getElementById('duracionTotal').innerHTML);
 }
 
 function minutoCero(){
@@ -163,6 +142,7 @@ function minutoCero(){
     document.getElementById('imagenDiscoA').href =audios[num].dataset.url;
     document.getElementById('imagenDisco').src = "resources/musica/disco"+num+".png";
     document.getElementById('botonPausa').src="resources/reproductor/pausa.png";
+    sessionStorage.setItem("tiempoTexto",document.getElementById('duracionTotal').innerHTML);
   }
   else{
     audios[num].currentTime = 0;
@@ -241,15 +221,13 @@ async function chequeos(){
   }
   tiempoActual.innerHTML = minutos+":"+segundos;
 
-  // document.cookie = num+";"+audios[num].currentTime+";";
-  // if(audios[num].paused){
-  //   document.cookie = document.cookie+"T;"
-  // }
-  // else{
-  //   document.cookie = document.cookie+"F;"
-  // }
-
   rangoDuracion.value=(audios[num].currentTime/audios[num].duration)*100;
+
+  sessionStorage.setItem("cancion",num);
+  sessionStorage.setItem("tiempo",audios[num].currentTime);
+  sessionStorage.setItem("pausado",audios[num].paused);
+  sessionStorage.setItem("volumen",audios[num].volume);
+  sessionStorage.setItem("tiempoRango",(audios[num].currentTime/audios[num].duration)*100);
 
   setTimeout(chequeos, 300);
 }
