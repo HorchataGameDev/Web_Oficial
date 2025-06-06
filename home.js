@@ -18,11 +18,11 @@ async function activarAudio(){
 
       audios[0].pause();
       boton=document.getElementById('botonPausa');
-      num = sessionStorage.getItem("cancion");
+      num = parseInt(sessionStorage.getItem("cancion"));
       document.getElementById('imagenDiscoA').value = num;
       tiempo = sessionStorage.getItem("tiempo");
       pausado = sessionStorage.getItem("pausado");
-      volumen = sessionStorage.getItem("volumen");
+      volumen = parseInt(sessionStorage.getItem("volumen"));
 
       document.getElementById('rangoDuracion').value = sessionStorage.getItem("tiempoRango");
       document.getElementById('duracionTotal').innerHTML = sessionStorage.getItem("tiempoTexto");
@@ -43,6 +43,7 @@ async function activarAudio(){
       }
       document.getElementById('imagenDiscoA').href =audios[num].dataset.url;
       document.getElementById('imagenDisco').src = "resources/musica/disco"+num+".png";
+      document.getElementById('imagenDiscoA').value = num;
     }
     else{
       document.getElementById('imagenDisco').src = "resources/musica/disco0.png";
@@ -66,7 +67,7 @@ async function activarAudio(){
 
 function botonPausa(){
   var boton=document.getElementById('botonPausa');
-  num =  document.getElementById('imagenDiscoA').value;
+  num =  parseInt(document.getElementById('imagenDiscoA').value);
   if(audios[num].paused){
       audios[num].play();
       boton.src="resources/reproductor/pausa.png";
@@ -79,7 +80,7 @@ function botonPausa(){
 }
 
 function siguienteCancion(){
-  num =  document.getElementById('imagenDiscoA').value;
+  num =  parseInt(document.getElementById('imagenDiscoA').value);
 
   audios[num].pause();
   var volT = audios[num].volume;
@@ -112,7 +113,7 @@ function siguienteCancion(){
 }
 
 function minutoCero(){
-  num =  document.getElementById('imagenDiscoA').value;
+  num =  parseInt(document.getElementById('imagenDiscoA').value);
   if(audios[num].currentTime < 2){
     //cancion anterior
     audios[num].pause();

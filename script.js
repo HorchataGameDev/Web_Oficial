@@ -79,6 +79,11 @@ addEventListener("mousemove", function(e) {
   mouse.y = e.pageY;
 });
 
+addEventListener("wheel", function(e) {
+  mouse.x = e.pageX;
+  mouse.y = e.pageY;
+});
+
 function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
