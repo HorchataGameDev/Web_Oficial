@@ -109,6 +109,7 @@ border: 3px solid;
   margin-bottom:4%;
   margin-top:4%;
   border-radius: 20px;
+  z-index: 11;
 }
 
 .sliderV::-webkit-slider-thumb {

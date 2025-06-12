@@ -22,7 +22,7 @@ async function activarAudio(){
       document.getElementById('imagenDiscoA').value = num;
       tiempo = sessionStorage.getItem("tiempo");
       pausado = sessionStorage.getItem("pausado");
-      volumen = parseInt(sessionStorage.getItem("volumen"));
+      volumen = parseFloat(sessionStorage.getItem("volumen"));
 
       document.getElementById('rangoDuracion').value = sessionStorage.getItem("tiempoRango");
       document.getElementById('duracionTotal').innerHTML = sessionStorage.getItem("tiempoTexto");
