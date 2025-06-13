@@ -1,48 +1,72 @@
 body{
-    background-image: url("../resources/fondos/barco.png");
+    background-image: url("../resources/fondos/bang.png");
     background-repeat: no-repeat;
 	background-size: cover;
 }
 
-.pez{
+.contenedor_pez, #contenedor_gay{
     position:absolute;
-    width:200px;
+}
+
+.contenedor_pez p, #contenedor_gay p{
+    text-align: center;
+    position: relative;
+    top:-30px;
+    font-size: 20px;
+    color: rgb(52, 24, 4);
+    text-shadow: 10px 10px 5px rgb(129, 111, 70);
+}
+
+.pez, #pez_gay{
+    width:120px;
     height:auto;
     z-index: 1;
     filter: drop-shadow(10px 10px 5px rgb(129, 111, 70));
 }
 
 #pez_gay{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width:80px;
-    height:auto;
-    z-index: 1;
-    filter: drop-shadow(10px 10px 5px rgb(129, 111, 70));
+    width:50px;
 }
 
-#pecera{
-    /* margin: 0px 10% 0px 10%; */
+#pecera, #bordePecera{
     margin:auto;
     margin-top: 20px;
-    height: 450px;
-    width: 80%;
+    height: 400px;
+    width: 70%;
     z-index: 1;
+    top:20px;
+    left:10%;
+    position: absolute;
+    border: 50px solid #5a5746;
+    background-image: url("../resources/fondos/barco.png");
+    background-repeat: no-repeat;
+	background-size: cover;
+    /* outline-offset: -50px; */
 }
 
 #bordePecera{
     z-index: 3;
-    border: 50px solid red;
     border-image: url(../resources/bordes/borde1.png) 300 round;
-    font-size: 0px;
-    outline-offset: -50px;
-    margin:auto;
-    top:20px;
-    left:6%;
-    position: absolute;
-    height: 450px;
-    width: 80%;
     user-select: none;
     pointer-events: none;
+    background-image: none;
+}
+
+#Old_Hobson{
+    position: absolute;
+    height: 180px;
+    width: 200px;
+    top:380px;
+    left:6%;
+    z-index: 4;
+    background-image: url("../resources/peces/Old_Hobson.png");
+    background-repeat: none;
+    background-size: contain;
+}
+
+#Old_Hobson a{
+    font-size: 36px;
+    display: block;
+    text-align: center;
+    margin-top:50%;
 }

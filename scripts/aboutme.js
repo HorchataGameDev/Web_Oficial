@@ -1,5 +1,6 @@
-let peces = document.getElementsByClassName("pez");
-let pez_gay = document.getElementById("pez_gay");
+let peces = document.getElementsByClassName("contenedor_pez");
+let pez_gay = document.getElementById("contenedor_gay");
+let pez_mov = false;
 
 posInicial(pez_gay);
 pez_gay.addEventListener("mousemove",huir);
@@ -17,10 +18,10 @@ function pecesStart(){
 function posInicial(pez){
     //Math.random() * (max - min) + min + "px";
     pez.style.left = (Math.random() * (80 - 15) +15) + "%";
-    pez.style.top = (Math.random() * (430-80) + 80) + "px";
+    pez.style.top = (Math.random() * (380-10) + 10) + "px";
     if(pez.style.left <=50){
     //está a la izquierda
-    pez.style.scale = -1;
+    pez.childNodes[1].style.transform = "scaleX(-1)";
     }
 }
 
@@ -57,17 +58,20 @@ function targetPez(pez){
 
     let pez_x =0;
 
+    console.log(pez);
+
     if(parseInt(pez.style.left) < 50){
         //está a la izquierda
-        pez.style.transform = "scaleX(-1)";
+        console.log(pez.childNodes);
+        pez.childNodes[1].style.transform = "scaleX(-1)";
         pez_x = (Math.random() * (80 - 50) +50);
     }
     else{
-        pez.style.transform = "scaleX(1)";
+        pez.childNodes[1].style.transform = "scaleX(1)";
         pez_x = (Math.random() * (50 - 15) +15);
     }
 
-    let pez_y = Math.random() * (430-80) + 80;
+    let pez_y = Math.random() * (300-40) + 40;
 
     // console.log("Nuevas coords: "+pez_x+" "+pez_y);
 
@@ -76,52 +80,61 @@ function targetPez(pez){
 
 function huir(){
 
-    pez=document.getElementById("pez_gay");
+    if(pez_mov){
+        return;
+    }
+    pez_mov = true;
+
+    console.log("mover");
+
+    pez=document.getElementById("contenedor_gay");
     
     let pez_x =0;
+
     if(parseInt(pez.style.left) < 50){
-        //está a la izquierda
-        pez.style.transform = "scaleX(-1)";
+        pez.childNodes[1].style.transform = "scaleX(-1)";
         pez_x = (Math.random() * (80 - 50) +50);
     }
     else{
-        pez.style.transform = "scaleX(1)";
+        pez.childNodes[1].style.transform = "scaleX(1)";
         pez_x = (Math.random() * (50 - 15) +15);
     }
 
-    let pez_y = Math.random() * (80-10) + 10;
+    let pez_y = Math.random() * (300-40) + 40;
 
-    pez.style.top = pez_y+"%";
-    pez.style.left = pez_x+"%";
+    // pez.style.left = pez_x + "%";
+    // pez.style.top = pez_y + "px";
+
+    moverPezGay(pez,pez_x, pez_y,1);
 }
 
+function moverPezGay(pez,target_x, target_y,speed){
+        let pos_x = parseFloat(pez.style.left.split(".")[0]);
+    let pos_y = parseFloat(pez.style.top);
+    let distancia_x = target_x - pos_x;
+    let distancia_y = target_y - pos_y;
+    let suma_x = 0;
+    let suma_y = 0;
 
-// const peznsfw = document.getElementById("pez_gay");
+    if(Math.abs(distancia_x) < 2 && Math.abs(distancia_y) < 10){
+        //terminado el movimiento, busca otro
+        pez_mov = false;
+    }
+    else {
+        pos_x = parseFloat(pez.style.left.split(".")[0]);
+        pos_y = parseFloat(pez.style.top);
+        distancia_x = target_x - pos_x;
+        distancia_y = target_y - pos_y;
 
-// const animateMove = (element, prop, pixels) =>
-//   anime({
-//     targets: element,
-//     [prop]: `${pixels}px`,
-//     easing: "easeOutCirc"
-//   });
+        suma_x = parseFloat(pez.style.left) + 10*(distancia_x/100);
+        suma_y = parseFloat(pez.style.top) + 10*(distancia_y/100);
 
-// ["mouseover", "click"].forEach(function (el) {
-//   peznsfw.addEventListener(el, function (event) {
-//     const top = getRandomNumber(window.innerHeight - this.offsetHeight);
-//     const left = getRandomNumber(window.innerWidth - this.offsetWidth);
+        pez.style.left = suma_x + "%";
+        pez.style.top = suma_y + "px";
 
-//     animateMove(this, "left", left).play();
-//     animateMove(this, "top", top).play();
-//   });
-// });
-
-// const getRandomNumber = (num) => {
-//   return Math.floor(Math.random() * (num + 1));
-// };
-
-//from: https://codepen.io/jsonhoward-the-typescripter/pen/pogZXNB
-
-
+        setTimeout(moverPezGay,speed,pez,target_x,target_y,speed);
+    }
+}
 
 
 
