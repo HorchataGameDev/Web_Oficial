@@ -2,7 +2,8 @@ function alertar(texto){
   //crea un texto pequeñito en la posición del cursor que se va
   const e = document.createElement("h1");
   e.classList.add("textoFuego");
-  document.getElementById("principal").appendChild(e);
+  // document.getElementById("principal").appendChild(e);
+  document.getElementsByTagName("body")[0].appendChild(e);
 
     // get the coordinates of the mouse
   var x = event.clientX;     // get the horizontal coordinate

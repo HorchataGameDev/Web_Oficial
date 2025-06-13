@@ -149,6 +149,7 @@ a{
   text-shadow: 3px 3px yellow;
   letter-spacing: 5px;
   pointer-events: none;
+  z-index: 100;
 }
 
 .sello{

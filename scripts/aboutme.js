@@ -1,4 +1,8 @@
-peces = document.getElementsByClassName("pez");
+let peces = document.getElementsByClassName("pez");
+let pez_gay = document.getElementById("pez_gay");
+
+posInicial(pez_gay);
+pez_gay.addEventListener("mousemove",huir);
 
 //con timeout
 pecesStart();
@@ -65,10 +69,57 @@ function targetPez(pez){
 
     let pez_y = Math.random() * (430-80) + 80;
 
-    console.log("Nuevas coords: "+pez_x+" "+pez_y);
+    // console.log("Nuevas coords: "+pez_x+" "+pez_y);
 
     moverPez(pez,pez_x, pez_y,Math.random() * (30 - 10) +10);
 }
+
+function huir(){
+
+    pez=document.getElementById("pez_gay");
+    
+    let pez_x =0;
+    if(parseInt(pez.style.left) < 50){
+        //está a la izquierda
+        pez.style.transform = "scaleX(-1)";
+        pez_x = (Math.random() * (80 - 50) +50);
+    }
+    else{
+        pez.style.transform = "scaleX(1)";
+        pez_x = (Math.random() * (50 - 15) +15);
+    }
+
+    let pez_y = Math.random() * (80-10) + 10;
+
+    pez.style.top = pez_y+"%";
+    pez.style.left = pez_x+"%";
+}
+
+
+// const peznsfw = document.getElementById("pez_gay");
+
+// const animateMove = (element, prop, pixels) =>
+//   anime({
+//     targets: element,
+//     [prop]: `${pixels}px`,
+//     easing: "easeOutCirc"
+//   });
+
+// ["mouseover", "click"].forEach(function (el) {
+//   peznsfw.addEventListener(el, function (event) {
+//     const top = getRandomNumber(window.innerHeight - this.offsetHeight);
+//     const left = getRandomNumber(window.innerWidth - this.offsetWidth);
+
+//     animateMove(this, "left", left).play();
+//     animateMove(this, "top", top).play();
+//   });
+// });
+
+// const getRandomNumber = (num) => {
+//   return Math.floor(Math.random() * (num + 1));
+// };
+
+//from: https://codepen.io/jsonhoward-the-typescripter/pen/pogZXNB
 
 
 
