@@ -1,12 +1,15 @@
 let peces = document.getElementsByClassName("contenedor_pez");
 let pez_gay = document.getElementById("contenedor_gay");
 let pez_mov = false;
+let modal = document.getElementById("modal");
 
 posInicial(pez_gay);
 pez_gay.addEventListener("mousemove",huir);
 
 //con timeout
 pecesStart();
+kelpStart();
+modalHide();
 
 function pecesStart(){
     for (let i = 0; i < peces.length; i++) {
@@ -18,7 +21,7 @@ function pecesStart(){
 function posInicial(pez){
     //Math.random() * (max - min) + min + "px";
     pez.style.left = (Math.random() * (80 - 15) +15) + "%";
-    pez.style.top = (Math.random() * (380-10) + 10) + "px";
+    pez.style.top = (Math.random() * (200-10) + 10) + "px";
     if(pez.style.left <=50){
     //está a la izquierda
     pez.childNodes[1].style.transform = "scaleX(-1)";
@@ -58,11 +61,8 @@ function targetPez(pez){
 
     let pez_x =0;
 
-    console.log(pez);
-
     if(parseInt(pez.style.left) < 50){
         //está a la izquierda
-        console.log(pez.childNodes);
         pez.childNodes[1].style.transform = "scaleX(-1)";
         pez_x = (Math.random() * (80 - 50) +50);
     }
@@ -71,9 +71,7 @@ function targetPez(pez){
         pez_x = (Math.random() * (50 - 15) +15);
     }
 
-    let pez_y = Math.random() * (300-40) + 40;
-
-    // console.log("Nuevas coords: "+pez_x+" "+pez_y);
+    let pez_y = Math.random() * (275-40) + 40;
 
     moverPez(pez,pez_x, pez_y,Math.random() * (30 - 10) +10);
 }
@@ -85,22 +83,18 @@ function huir(){
     }
     pez_mov = true;
 
-    console.log("mover");
-
     pez=document.getElementById("contenedor_gay");
     
     let pez_x =0;
 
     if(parseInt(pez.style.left) < 50){
-        pez.childNodes[1].style.transform = "scaleX(-1)";
         pez_x = (Math.random() * (80 - 50) +50);
     }
     else{
-        pez.childNodes[1].style.transform = "scaleX(1)";
         pez_x = (Math.random() * (50 - 15) +15);
     }
 
-    let pez_y = Math.random() * (300-40) + 40;
+    let pez_y = Math.random() * (230-40) + 40;
 
     // pez.style.left = pez_x + "%";
     // pez.style.top = pez_y + "px";
@@ -136,7 +130,36 @@ function moverPezGay(pez,target_x, target_y,speed){
     }
 }
 
+function kelpStart(){
+    // <img src="../resources/peces/kelp1.gif" id="kelp_1" class="kelp" style="left:10%;">
+    // <img src="../resources/peces/kelp2.gif" id="kelp_3" class="kelp" style="left:74%;">
 
+    var c = document.getElementById("contenedor_kelp");
+
+    for(var i=3;i<=67;i=i+(Math.random()*(10-4)+4)){
+        if(Math.random()>=0.3){
+            c.innerHTML = c.innerHTML+"<img src='../resources/peces/kelp1.gif' id='kelp_"+(i/3)+"' class='kelp' style='left:"+(10+i-3)+"%;'>";
+        }
+        else{
+            c.innerHTML = c.innerHTML+"<img src='../resources/peces/kelp2.gif' id='kelp_"+(i/3)+"' class='kelp' style='left:"+(10+i-3)+"%;'>";
+        }
+    }
+}
+
+function modalHide(){
+    modal.style.visibility="hidden";
+    modal.style.pointerEvents="none";
+    document.getElementById("cuerpo_modal").innerHTML = "";
+}
+
+function modalShow(tipo){
+    console.log( modal.childNodes);
+    modalHide();
+    modal.style.visibility="visible";
+    modal.style.pointerEvents="all";
+    document.getElementById("titulo_modal").innerHTML = tipo;
+    document.getElementById("cuerpo_modal").innerHTML = "<p>Aquí habrá cosas sobre "+tipo+"</p>";
+}
 
 
 

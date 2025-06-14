@@ -26,6 +26,11 @@ body{
 
 #pez_gay{
     width:50px;
+    -webkit-animation-name: thread;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: up;
+	-webkit-animation-timing-function:linear;
 }
 
 #pecera, #bordePecera{
@@ -45,7 +50,7 @@ body{
 }
 
 #bordePecera{
-    z-index: 3;
+    z-index: 4;
     border-image: url(../resources/bordes/borde1.png) 300 round;
     user-select: none;
     pointer-events: none;
@@ -58,7 +63,7 @@ body{
     width: 200px;
     top:380px;
     left:6%;
-    z-index: 4;
+    z-index: 5;
     background-image: url("../resources/peces/Old_Hobson.png");
     background-repeat: none;
     background-size: contain;
@@ -69,4 +74,58 @@ body{
     display: block;
     text-align: center;
     margin-top:50%;
+}
+
+.kelp{
+    position: absolute;
+    width:200px;
+    z-index:3;
+    top:275px;
+    pointer-events: none;
+}
+
+#modal{
+    position: absolute;
+    height: 60%;
+    width: 60%;
+    z-index: 10;
+    top:20%;
+    left:20%;
+}
+
+
+@-webkit-keyframes thread {
+    0% {
+        transform:translate(-10px,0px);
+    }
+    10%{
+        transform:translate(10px,-10px);
+    }
+    20%{
+        transform:translate(-10px,-15px);
+    }
+    30%{
+        transform:translate(10px,-20px);
+    }
+    40%{
+        transform:translate(-10px,-25px);
+    }
+    50%{
+        transform:translate(10px,-30px);
+    }
+    60%{
+        transform:translate(-10px,-25px);
+    }
+    70%{
+        transform:translate(10px,-20px);
+    }
+    80%{
+        transform:translate(-10px,-15px);
+    }
+    90%{
+        transform:translate(10px,-10px);
+    }
+    100% {
+        transform:translate(-10px,0px);
+    }
 }
