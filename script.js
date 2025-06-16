@@ -46,6 +46,11 @@ let parrots = [],
 for (let i = 0; i < PARROTS; i++) {
   parrots[i] = new Parrot(i);
 }
+if(true){
+  parrots = [];
+}
+
+
 
 function Parrot(i) {
   this.x = 0;

@@ -1,6 +1,8 @@
 @font-face {
     font-family: "Fuego";
     src: url(resources/Hellbone-Demo.otf) format("truetype");
+    font-family: "pixel_windows";
+    src: url(resources/PSSC.ttf) format("truetype");
 }
 p.customfont { 
     font-family: "My Custom Font", Verdana, Tahoma;

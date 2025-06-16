@@ -93,6 +93,46 @@ body{
     left:20%;
 }
 
+#cuerpo_modal{
+    display: flex;
+    flex-direction:column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin:0px 3px 0px 0px;
+    padding:8px 8px 6px 8px;
+    height: 88%;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;               
+  background-color:transparent;
+  height: 2px;
+
+    box-shadow: inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+}
+
+#cuerpo_modal h1{
+    font-family: "Pixelated MS Sans Serif", Arial;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#cuerpo_modal p{
+    /* font-size: 16px; */
+    font-family: "Pixelated MS Sans Serif", Arial;
+}
+
+#cuerpo_modal::-webkit-scrollbar-button{
+    height: 200px;
+}
+
+.status-bar{
+    height: 12px;
+}
+
 
 @-webkit-keyframes thread {
     0% {

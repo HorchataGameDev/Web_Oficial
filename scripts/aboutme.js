@@ -2,6 +2,7 @@ let peces = document.getElementsByClassName("contenedor_pez");
 let pez_gay = document.getElementById("contenedor_gay");
 let pez_mov = false;
 let modal = document.getElementById("modal");
+document.getElementById('cuerpo_modal').setAttribute("style","height:"+(modal.clientHeight-document.getElementById("barra_modal").clientHeight-35)+"px");
 
 posInicial(pez_gay);
 pez_gay.addEventListener("mousemove",huir);
@@ -9,7 +10,7 @@ pez_gay.addEventListener("mousemove",huir);
 //con timeout
 pecesStart();
 kelpStart();
-modalHide();
+// modalHide();
 
 function pecesStart(){
     for (let i = 0; i < peces.length; i++) {
@@ -53,8 +54,20 @@ function moverPez(pez, target_x,target_y,speed){
         pez.style.left = suma_x + "%";
         pez.style.top = suma_y + "px";
 
-        setTimeout(moverPez,speed,pez,target_x,target_y,speed);
+        let ran = parseInt((Math.random() * 80 ));
+        console.log(ran);
+        if(parseInt(ran) == 26){
+            console.log("CAMBIO");
+            targetPez(pez);
+            return;
+        }
+        else{
+            setTimeout(moverPez,speed,pez,target_x,target_y,speed);
+        }
+
+        
     }
+
 }
 
 function targetPez(pez){
@@ -64,14 +77,14 @@ function targetPez(pez){
     if(parseInt(pez.style.left) < 50){
         //está a la izquierda
         pez.childNodes[1].style.transform = "scaleX(-1)";
-        pez_x = (Math.random() * (80 - 50) +50);
+        pez_x = (Math.random() * (90 - 80) +80);
     }
     else{
         pez.childNodes[1].style.transform = "scaleX(1)";
-        pez_x = (Math.random() * (50 - 15) +15);
+        pez_x = (Math.random() * (20 - 15) +15);
     }
 
-    let pez_y = Math.random() * (275-40) + 40;
+    let pez_y = Math.random() * 290;
 
     moverPez(pez,pez_x, pez_y,Math.random() * (30 - 10) +10);
 }
@@ -160,6 +173,12 @@ function modalShow(tipo){
     document.getElementById("titulo_modal").innerHTML = tipo;
     document.getElementById("cuerpo_modal").innerHTML = "<p>Aquí habrá cosas sobre "+tipo+"</p>";
 }
+
+window.onresize = function() {
+    var suma = modal.clientHeight-document.getElementById("barra_modal").clientHeight-35;
+    document.getElementById('cuerpo_modal').setAttribute("style","height:"+suma+"px");
+ }
+
 
 
 
