@@ -43,14 +43,11 @@ let parrots = [],
     };
 
 // populate parrots
-for (let i = 0; i < PARROTS; i++) {
+if(!document.querySelector("#no_trail")){
+  for (let i = 0; i < PARROTS; i++) {
   parrots[i] = new Parrot(i);
 }
-if(true){
-  parrots = [];
 }
-
-
 
 function Parrot(i) {
   this.x = 0;

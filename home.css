@@ -1,3 +1,11 @@
+#contenido{
+	background-image: url("resources/fondo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+  overflow: auto;
+  overflow-y: hidden;
+}
+
 #textoB{
   width:600px;
   height: 800px;
@@ -65,8 +73,9 @@ border: 3px solid;
 }
 
 .blinkieBotonera{
-    width:100%;
+    width:98%;
     height:70%;
+    margin: 5px 10px 5px 2px;
 }
 
 .entrada p{
@@ -186,6 +195,19 @@ border: 3px solid;
     visibility: hidden;
 }
 
+#que_asi_sea{
+  height: auto;
+  padding: 10px;
+  border: solid black 1px;
+  position: fixed;
+  z-index: -10;
+  top:20px;
+  left:40%;
+}
+#que_asi_sea input{
+  margin: 5px;
+}
+
 #bienvenida{
 	width: 40%;
 	height:20%;
@@ -201,10 +223,10 @@ border: 3px solid;
 	width:200px;
 }
 
-#yo{
-    aspect-ratio : 1 / 1;
-    height: 100%px;
-}
+/* #yo{
+  aspect-ratio : 1 / 1;
+  height: 100%px;
+} */
 
 #divScrolleable{
 	overflow:hidden;

@@ -1,3 +1,8 @@
+*{
+    cursor:url("../resources/cursor3.png"), auto;
+    font-family: "Goth";
+}
+
 body{
     background-image: url("../resources/fondos/bang.png");
     background-repeat: no-repeat;
@@ -11,10 +16,11 @@ body{
 .contenedor_pez p, #contenedor_gay p{
     text-align: center;
     position: relative;
-    top:-30px;
-    font-size: 20px;
+    top:-40px;
+    font-size: 16px;
     color: rgb(52, 24, 4);
     text-shadow: 10px 10px 5px rgb(129, 111, 70);
+    pointer-events: none;
 }
 
 .pez, #pez_gay{
@@ -27,7 +33,7 @@ body{
 #pez_gay{
     width:50px;
     -webkit-animation-name: thread;
-	-webkit-animation-duration: 2s;
+	-webkit-animation-duration: 6s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-direction: up;
 	-webkit-animation-timing-function:linear;
@@ -70,7 +76,7 @@ body{
 }
 
 #Old_Hobson a{
-    font-size: 36px;
+    font-size: 24px;
     display: block;
     text-align: center;
     margin-top:50%;
@@ -93,6 +99,14 @@ body{
     left:20%;
 }
 
+#modal *{
+    cursor:url("../resources/cursor4.png"), auto;
+}
+
+#titulo_modal{
+    font-family: "Arial";
+}
+
 #cuerpo_modal{
     display: flex;
     flex-direction:column;
@@ -103,27 +117,48 @@ body{
     height: 88%;
 }
 
-hr {
-  border: 0;
-  clear:both;
-  display:block;
-  width: 100%;               
-  background-color:transparent;
-  height: 2px;
+#cuerpo_modal *{
+    font-family: "Pixel_windows";
+}
 
+#contenedor_iframe{
+    margin: 10px;
+}
+
+#web_personal{
+    height: 300%;
+    width: 100%;
+    margin:0px;
+}
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 100%;               
+    background-color:transparent;
+    height: 2px;
     box-shadow: inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
 }
 
 #cuerpo_modal h1{
-    font-family: "Pixelated MS Sans Serif", Arial;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    padding: 0px 10px 0px 10px;
 }
 
 #cuerpo_modal p{
-    /* font-size: 16px; */
-    font-family: "Pixelated MS Sans Serif", Arial;
+    margin-top: 5px;
+    padding: 0px 10px 0px 10px;
+    /* font-size: 12px; */
+    -webkit-font-smoothing: antialiased;
 }
+ #cuerpo_modal ol{
+    margin-top: 5px;
+    padding: 0px 10px 0px 50px;
+
+ }
 
 #cuerpo_modal::-webkit-scrollbar-button{
     height: 200px;
@@ -131,6 +166,33 @@ hr {
 
 .status-bar{
     height: 12px;
+    font-family: "Pixel_windows"; 
+}
+
+#bracket{
+    margin:auto;
+    background-image: url("../resources/fondos/bracket.png");
+    background-repeat: no-repeat;
+	background-size: cover;
+
+    width:700px;
+    aspect-ratio: 4/3;
+    /* height:100%; */
+    display: block;
+    border-style: inset;
+}
+
+.participante{
+    position: relative;
+    height: 42px;
+    width: 42px;
+}
+
+#winner{
+    position: relative;
+    height: 84px;
+    left: 300px;
+    top: -60px;
 }
 
 

@@ -1,7 +1,24 @@
-document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight-210)+"px");
+document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight-270)+"px");
 window.onresize = function() {
-    document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight-210)+"px");
+    document.getElementById('contenedorLateral').setAttribute("style","height:"+(document.getElementById('contenido').clientHeight-270)+"px");
  }
+
+if(window.self == window.top){
+  var contenedor_form = document.createElement("div");
+  contenedor_form.setAttribute("id","que_asi_sea");
+  contenedor_form.innerHTML=`
+  	<img src="resources/fondos/pilar.png" style="position: fixed;z-index: -10;top:80px;left: 30%;" height="10%">
+	<img src="resources/fondos/cactus.png" style="position: fixed;z-index: -10;top:100px;left: 60%;" height="10%">
+		<p><b>Acceso al área personal</b></p>
+		<form action="pages/cmd.html" method="get">
+			<input type="text" placeholder="nombre" maxlength="5" name=nombre required><br>
+			<input type="text" placeholder="cargo" maxlength="3" name=cargo required><br>
+			<input type="text" placeholder="pin" maxlength="4" name=pin required><br>
+			<center><input type="submit" value="login"></center>
+		</form>
+  `;
+  document.body.appendChild(contenedor_form);
+}
 
 audios = document.getElementsByClassName("bgm");
 audios[0].volume = 0.5;
@@ -187,7 +204,7 @@ function irAlSegundo(segundo){
   
 }
 
-var sellos= 89; //Estupido javascript no sabe contar ficheros
+var sellos= 130; //Estupido javascript no sabe contar ficheros
 var contenedorSellos = document.getElementById("divSellos");
 for(var i=1;i<=sellos;i++){
     contenedorSellos.innerHTML = contenedorSellos.innerHTML+"<img class=sello src=resources/sellos/"+i+".gif>";

@@ -12,15 +12,20 @@
   </head>
   
   <body>
-        <div id="divA" style="text-align:center"><h1>mi colección de sellos</h1></div>
+        <div id="divA" style="text-align:center;padding:20px;"><h1>mi colección de sellos</h1></div>
         <a href="../index.html">Volver</a>
 	<script src="script.js"></script>
   <script>
-        var sellos= 89; //Estupido javascript no sabe contar ficheros
+        var sellos= 130; //Estupido javascript no sabe contar ficheros
         var contenedorSellos = document.getElementById("divA");
         for(var i=1;i<=sellos;i++){
-            contenedorSellos.innerHTML = contenedorSellos.innerHTML+"<img class=muestraSellos src=../resources/sellos/"+i+".gif>";
+            contenedorSellos.innerHTML = contenedorSellos.innerHTML+"<img id='sello_"+i+"' class=muestraSellos src=../resources/sellos/"+i+".gif>";
+            if(i==178){
+              i++;
+              contenedorSellos.innerHTML = contenedorSellos.innerHTML+"<img id='sello_"+i+"' class=muestraSellos src=../resources/sellos/"+i+".gif onclick=conexion()>";
+            }
         }
+        function conexion(){alert('Ahhh.');alert('Por fin, mis esfuerzos empiezan a dar frutos.');alert('Has atisbado las reverberaciones y has conseguido establecer contacto.');alert('Tu competencia me enorgullece.');alert('Pero cómo piensas continuar, ¿eh?');alert('El mundo está lleno de rincones donde esconder secretos.');alert('Yo fui una vez como tú. Un niño engreído.');alert('Creía que podía resolver los misterios de la existencia.');alert('Y mírame ahora.');alert('Después de tanto tiempo buscando el Desierto Blanco, soy incapaz de volver.');alert('Échame una mano, anda.');alert('Estás buscando unas credenciales, ¿verdad?');alert('Te puedo decir dónde las encontré. Con un poco de suerte no se habrán movido en todos estos años.');alert('La primera credencial era su nombre, ah, pero después de tantos años, no consigo recordarlo.');alert('Para encontrarlo, coge el libro y devuélvelo a su biblioteca. Terndrás que viajar lejos, a la biblioteca a la que pertenecen todos los textos.');alert('El segundo era el nombre de su orden, ¿cómo hacían llamarse? Recuerdo que era rimbombante y un sinsentido. Creo que les gustaba sentirse importantes, creo que nos gustaba...');alert('La tercera era un número importante para ella. Bueno, lo era para todos nosotros.');alert('Lo encontré en un mural, custodiado por una criatura sin propósito.');alert('Encuentra las claves. Descubre la verdad.');alert('Y sácame de este lugar.');}
   </script>
   </body>
 </html>

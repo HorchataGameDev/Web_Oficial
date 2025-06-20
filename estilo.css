@@ -1,9 +1,16 @@
 @font-face {
-    font-family: "Fuego";
+    font-family: "Fuego"; /* FROM https://www.dafont.com/es/hellbone.font */
     src: url(resources/Hellbone-Demo.otf) format("truetype");
-    font-family: "pixel_windows";
-    src: url(resources/PSSC.ttf) format("truetype");
 }
+@font-face {
+    font-family: "Pixel_windows"; /* FROM https://www.dafont.com/es/leviwindows.font */
+    src: url(resources/WinPix.ttf) format("truetype");
+}
+@font-face {
+    font-family: "goth"; /* FROM https://www.dafont.com/es/elementary-gothic-bookhand.font */
+    src: url(resources/Goth.ttf) format("truetype");
+}
+
 p.customfont { 
     font-family: "My Custom Font", Verdana, Tahoma;
 }
