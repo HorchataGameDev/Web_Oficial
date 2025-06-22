@@ -189,6 +189,10 @@ a{
   transform: scaleX(-1);
 }
 
+.pixelart{
+  image-rendering: pixelated; 
+}
+
 [class*='parrot'] {
   position: absolute;
   height: 60px; 

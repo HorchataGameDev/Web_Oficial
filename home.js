@@ -7,8 +7,8 @@ if(window.self == window.top){
   var contenedor_form = document.createElement("div");
   contenedor_form.setAttribute("id","que_asi_sea");
   contenedor_form.innerHTML=`
-  	<img src="resources/fondos/pilar.png" style="position: fixed;z-index: -10;top:80px;left: 30%;" height="10%">
-	<img src="resources/fondos/cactus.png" style="position: fixed;z-index: -10;top:100px;left: 60%;" height="10%">
+  	<img src="resources/fondos/pilar.png" style="position: fixed;z-index: -10;top:80px;left: 30%; height=10%;" class=pixelart>
+	<img src="resources/fondos/cactus.png" style="position: fixed;z-index: -10;top:70px;left: 60%; height=20%;" class=pixelart>
 		<p><b>Acceso al área personal</b></p>
 		<form action="pages/cmd.html" method="get">
 			<input type="text" placeholder="nombre" maxlength="5" name=nombre required><br>
