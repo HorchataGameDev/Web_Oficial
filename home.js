@@ -12,7 +12,7 @@ if(window.self == window.top){
 		<p><b>Acceso al área personal</b></p>
 		<form action="pages/cmd.html" method="get">
 			<input type="text" placeholder="nombre" maxlength="5" name=nombre required><br>
-			<input type="text" placeholder="cargo" maxlength="3" name=cargo required><br>
+			<input type="text" placeholder="cargo (3 primeras letras)" maxlength="3" name=cargo required><br>
 			<input type="text" placeholder="pin" maxlength="4" name=pin required><br>
 			<center><input type="submit" value="login"></center>
 		</form>
@@ -204,7 +204,7 @@ function irAlSegundo(segundo){
   
 }
 
-var sellos= 130; //Estupido javascript no sabe contar ficheros
+var sellos= 200; //Estupido javascript no sabe contar ficheros
 var contenedorSellos = document.getElementById("divSellos");
 for(var i=1;i<=sellos;i++){
     contenedorSellos.innerHTML = contenedorSellos.innerHTML+"<img class=sello src=resources/sellos/"+i+".gif>";

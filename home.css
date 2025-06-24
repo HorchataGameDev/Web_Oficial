@@ -292,7 +292,7 @@ li{
 
 #divSellos{
 	-webkit-animation-name: move;
-	-webkit-animation-duration: 7s;
+	-webkit-animation-duration: 20s; /* 0,1segs por cada sello */
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-direction: up;
 	-webkit-animation-timing-function:linear;
@@ -300,7 +300,7 @@ li{
 
 @-webkit-keyframes move {
    0% {
-      transform:translateY(22%);
+      transform:translateY(10%);
    }
    100% {
       transform:translateY(-100%);
