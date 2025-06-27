@@ -1,6 +1,6 @@
 //by HorchataGameDev
-const caracteres = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz1234567890 ¿?¡!,.áéíóúÁÉÍÓÚüÜ-'%_".split('');
-const max = caracteres.length-1;
+const caracteres = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz1234567890 ¿?¡!,.áéíóúÁÉÍÓÚüÜ-'%_/".split('');
+const max = caracteres.length;
 
 function encode(key,text){
     resultado = [];
@@ -50,6 +50,9 @@ function decode(key,text){
         for (var k=0;k<max;k++){
             if(text[j]==caracteres[k]){
                 my_index = (k-(key[i].charCodeAt(0)%max))%max;
+                if(my_index<0){
+                    my_index = max+my_index;
+                }
                 i++
                 i=i%key.length
                 resultado.push(caracteres[my_index]);

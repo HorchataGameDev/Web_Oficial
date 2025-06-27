@@ -124,8 +124,8 @@ border: 3px solid;
 .sliderV::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
   background-image: url("resources/reproductor/bola.gif");
   background-repeat: no-repeat;
   background-size: cover;
@@ -134,8 +134,8 @@ border: 3px solid;
 }
 
 .sliderV::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  /* width: 40px;
+  height: 40px; */
   background-image: url("resources/reproductor/bola.gif");
   background-repeat: no-repeat;
   background-size: cover;

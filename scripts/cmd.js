@@ -24,78 +24,14 @@ for(var i=0;i<arr_nombre.length;i++){
 for(var i=0;i<arr_cargo.length;i++){
     cod_cargo = cod_cargo + arr_cargo[i].charCodeAt(0);
 }
+
 var computo = Math.floor(parseInt(cod_nombre)/parseInt(cod_cargo));
 computo = computo * pin;
 
 console.log(computo);
 
-if(computo == 34775404){//cipher
-    document.body.innerHTML="";
+if(computo == 34775404){
+    document.body.innerHTML="<img src='../resources/cmd.png' id=cmd onclick=window.location='wikipedia.org'>";
     document.title = "Que así sea";
-    //cmd
-}
-
-console.log(encode("abc","esto|es|una|prueba|para|ver|una|cosa."));
-console.log(decode("abc","o57z|p6|6yn|148onn|1m5l|8q3|7zl|ñ24m-"));
-
-function encode(key,text){
-    resultado = [];
-    if(key.length<1){
-        return 'no hay clave.';
-    }
-    if(text.length<1){
-        return 'no hay texto.'
-    }
-    key = key.toLowerCase();
-    key = key.split('');
-    text = text.split('');
-    var i = 0;
-    for (var j =0;j<text.length;j++){
-        var existe = false;
-        for (var k=0;k<max;k++){
-            if(text[j]==caracteres[k]){
-                my_index = (k+(key[i].charCodeAt(0)%max))%max;
-                i++
-                i=i%key.length
-                resultado.push(caracteres[my_index]);
-                existe = true;
-                break;
-            }
-        }
-        if(!existe){
-            resultado.push(text[j]); //ignora caracteres si no existen en la secuencia
-        }
-    }
-    return resultado.join("");
-}
-
-function decode(key,text){
-        resultado = [];
-    if(key.length<1){
-        return 'no hay clave.';
-    }
-    if(text.length<1){
-        return 'no hay texto.'
-    }
-    key = key.toLowerCase();
-    key = key.split('');
-    text = text.split('');
-    var i = 0;
-    for (var j =0;j<text.length;j++){
-        var existe = false;
-        for (var k=0;k<max;k++){
-            if(text[j]==caracteres[k]){
-                my_index = (k-(key[i].charCodeAt(0)%max))%max;
-                i++
-                i=i%key.length
-                resultado.push(caracteres[my_index]);
-                existe = true;
-                break;
-            }
-        }
-        if(!existe){
-            resultado.push(text[j]); //ignora caracteres si no existen en la secuencia
-        }
-    }
-    return resultado.join("");
+    document.body.style.backgroundColor = "rgb(43, 43, 43)";
 }

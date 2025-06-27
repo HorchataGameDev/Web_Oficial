@@ -1,0 +1,47 @@
+body{
+    background-image: url("../resources/mesa/tapete.png");
+    background-repeat: no-repeat;
+	background-size: cover;
+    overflow: clip;
+}
+.carta{
+    background-image: url("../resources/mesa/carta1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* height: 976px;
+    width: 686px; originales*/
+    height: 488px;
+    width: 343px;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    /* transform: scale(0.25,0.25); */
+    position: absolute;
+    z-index: 10;
+    transition: transform 0.1s;
+    border-radius: 5%;
+}
+.contenido_carta{
+    display: none;
+    max-height: 488px;
+    max-width: 343px;
+    overflow: hidden;
+    /* line-break: anywhere; */
+}
+.contenido_carta, .contenido_carta *{
+        padding: 20px;
+        text-align: justify;
+}
+#contenedor_cartas{
+    /* width: calc(1500px*0.9);
+    height: calc(671px*0.9); */
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 0;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    overflow: visible;
+    background-color: rgba(0, 255, 255, 0.134);
+}

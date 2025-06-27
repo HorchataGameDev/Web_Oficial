@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="fondo">
-        <img id="main_char" src="../resources/mapa/facing_right.png" data-last_dir="left">
+        <img id="main_char" class=chars src="../resources/mapa/facing_right.png" data-last_dir="left">
         <img class="chars" src="../resources/mapa/chars/bus.gif" style="height:119px;width:194px;transform: scaleX(-1);top: 470px;left:20px;">
         <img class="chars" src="../resources/mapa/chars/maid.png" style="height:94px;width:64px;top:120px;left:950px;">
         <img class="chars" src="../resources/mapa/chars/idol.gif" style="height:150px;width:150px;top:350px;left:900px;z-index:7;">
@@ -20,6 +20,11 @@
 
         <img class="chars" src="../resources/mapa/chars/can.gif" style="height:130px;width:72px;top: 400px;left:350px;">
         <img class="chars" src="../resources/mapa/chars/hermit.gif" style="height:127px;width:85px;top: 390px;left:540px;">
+
+        <img class="farola pixelart modal_escondido" src="../resources/mapa/chars/head.png" style="height:141;width:60;top:200px;left:675px;z-index:6;">
+        <img class="farola pixelart modal_escondido" src="../resources/mapa/chars/pole.png" style="height:141;width:60;top:200px;left:675px;z-index:3;">
+        <img class="farola pixelart modal_escondido" src="../resources/mapa/chars/spotlight.png" style="height:141;width:60;top:200px;left:675px;z-index:4;">
+        <img class="farola pixelart modal_escondido" src="../resources/mapa/chars/light.png" style="height:141;width:60;top:200px;left:675px;z-index:6;">
     </div>
 
     <div id="contenedor_modales">
@@ -42,7 +47,10 @@
         </div>
         <div class="modal_info modal_escondido" id=2 >
             <h1>Horchata Wide Web</h1>
-            <p>Perdoooon no quiero poner relleno pero de verdad que me hace mucha ilu tener mi propia web. Aunque no tenga backend y no pueda hacer la mitad de las cosas que me gustaría hacer. Seguramente de aquí a un tiempo monte una página en condiciones a partir de esta, pero de momento damos gracias a github pages my beloved.<br>La verdad es que es divertido tener la limitación de estar trabajando en local, sobre todo si quiero meter secretos en la página, pero me las apaño. También me está sirviendo mucho como distracción. Me lo paso super bien intentando implementar tonterías como el mapa o la pecera y me viene muy bien para no pensaren mis problemas.</p>
+            <p>Perdoooon no quiero poner relleno pero de verdad que me hace mucha ilu tener mi propia web. Aunque no tenga backend y no pueda hacer la mitad de las cosas que me gustaría hacer. Seguramente de aquí a un tiempo monte una página en condiciones a partir de esta, pero de momento damos gracias a github pages my beloved.<br>La verdad es que es divertido tener la limitación de estar trabajando en local, sobre todo si quiero meter secretos en la página, pero me las apaño. Por ejemplo, mira qué clase de cifrado más chula he hecho!<p>
+            <iframe width="100%" height="auto" src="../scripts/cipher.js" style="background-color:white"></iframe>
+
+            </p>También me está sirviendo mucho como distracción. Me lo paso super bien intentando implementar tonterías como el mapa o la pecera y me viene genial para no pensar en mis problemas.</p>
             <p>Me encantaaría convencer a algunos amigos de que se hicieran páginas del estilo y tener cada uno una especie de red de blogs personalizados, pero claro, para mi es fácil decirlo porque soy desarrollador web.<br>Espero que te esté gustando mi página. <3 </p>
             <center><br><img src="../resources/botonWeb.gif" class="pixelart" height="60px"></center>
         </div>
@@ -68,13 +76,32 @@
             <h1>untitled music quiz game</h1>
             <p>¡Mi proyecto final de desarrollo de aplicaciones web! Estoy bastante orgulloso del resultado para el poco tiempo que tuve. Es un party game completamente funcional que usa la api de Spotify.</p>
             <p>El funcionamiento es el siguiente: te metes en la página y haces login con tu cuenta de spotify, creas una sala o te unes a una sala mediante clave, la aplicación registra las últimas canciones gustadas de cada jugador y selecciona unas pocas. Ahora el programa va reproduciendo las canciones y cada jugador deberá, en un tiempo limitado, adivinar a cuál de sus amigos le gusta la canción que está sonando.</p>
-            <p>Sí, escomo el anime music quiz. Recuerdo que no me preocupé por el diseño visual y era fea como pegarlea un padre, pero no costaría mucho trabajo ponerla a punto y dejarla subida en algún sitio. En fin, otro proyecto a medias.</p>
+            <p>Sí, escomo el anime music quiz. Recuerdo que no me preocupé por el diseño visual y era fea como pegarle a un padre, pero no costaría mucho trabajo ponerla a punto y dejarla subida en algún sitio. En fin, otro proyecto a medias.</p>
             <center><br><img src="../resources/mapa/chars/music.gif" class="pixelart" height="100px"></center>
+        </div>
+        <div id=modal_c class="modal_escondido">
+            <p>Ha aparecido una farola aquí en medio. Tiene una inscripción grabada al pie:</p>
+            <verso>
+                En memoria del creador sin nombre<br>
+                Nació y murió durante una época anterior al tiempo.<br>
+                Por eso le veneramos todos los años el 19 de Mayo, día en el que se hayaron sus restos.<br>
+                QEPD<br>
+            </verso>
+        </div>
+        <div id=modal_s class="modal_escondido">
+            <p>Hay un teléfono en el suelo.</p>
+            <img src="../resources//bordes/telefono.png" class="tel">
+            <div class="tel_content">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2GXHNv5YGWkkCbFkWA91oa?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
         </div>
     </div>
 
         
 
+    <audio loop id=ambient>
+        <source src="../resources/musica/White waves.mp3" type="audio/mpeg">
+    </audio>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script defer src="../scripts/proyectos.js" defer></script>
     <script src="../script.js" defer></script>

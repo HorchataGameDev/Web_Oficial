@@ -33,9 +33,10 @@
 					<a id=imagenDiscoA target=”_blank” onmouseup="pausar()" value="0" href="error"><img class="disco" src="resources/loading.gif" id="imagenDisco" ></a>
 					<center><b id="tiempoActual">--:--</b> <input type="range" step='.1' min="0" max="100" value="5" class="sliderV" id="rangoDuracion" oninput="irAlSegundo(value)"> <b id="duracionTotal">--:--</b></center>
 					<div id="botoneraReproductor">
-						<img class="botonMusica" src="resources/reproductor/anterior.png" onclick="minutoCero()" onmousedown="this.src='resources/reproductor/anteriorP.png'" onmouseup="this.src='resources/reproductor/anterior.png'">
-						<img class="botonMusica" src="resources/reproductor/pausa.png" id="botonPausa" onclick="botonPausa()" onmousedown="this.src='resources/reproductor/pausaP.png'">
-						<img class="botonMusica" src="resources/reproductor/siguiente.png" onclick="siguienteCancion()" onmousedown="this.src='resources/reproductor/siguienteP.png'" onmouseup="this.src='resources/reproductor/siguiente.png'">
+						<img class="botonMusica pixelart" src="resources/reproductor/anterior.gif" onclick="minutoCero()">
+						<!-- <img class="botonMusica" src="resources/reproductor/pausa.gif" id="botonPausa" onclick="botonPausa()"  onmousedown="this.src='resources/reproductor/pausaP.png'"> -->
+						 <img class="botonMusica pixelart" src="resources/reproductor/pausa.gif" id="botonPausa" onclick="botonPausa()" >
+						<img class="botonMusica pixelart" src="resources/reproductor/siguiente.gif" onclick="siguienteCancion()">
 					</div>
 					<center><b>vol. </b><input type="range" min="0" max="100" value="50" class="sliderV" id="rangoVolumen" oninput="cambiarVolumen(value)"><b id="numeroVolumen">&nbsp;&nbsp;50%</b></center>
 					<!-- <table style="width:100%">

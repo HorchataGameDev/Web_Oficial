@@ -52,11 +52,11 @@ async function activarAudio(){
 
       if(pausado=="true"){
         audios[num].pause();
-        boton.src="resources/reproductor/play.png";
+        boton.src="resources/reproductor/play.gif";
       }
       else{
         audios[num].play();
-        boton.src="resources/reproductor/pausa.png";
+        boton.src="resources/reproductor/pausa.gif";
       }
       document.getElementById('imagenDiscoA').href =audios[num].dataset.url;
       document.getElementById('imagenDisco').src = "resources/musica/disco"+num+".png";
@@ -87,11 +87,11 @@ function botonPausa(){
   num =  parseInt(document.getElementById('imagenDiscoA').value);
   if(audios[num].paused){
       audios[num].play();
-      boton.src="resources/reproductor/pausa.png";
+      boton.src="resources/reproductor/pausa.gif";
     }
     else{
       audios[num].pause();
-      boton.src="resources/reproductor/play.png";
+      boton.src="resources/reproductor/play.gif";
     }
   
 }
@@ -125,7 +125,7 @@ function siguienteCancion(){
   document.getElementById('imagenDiscoA').value = num;
   document.getElementById('imagenDiscoA').href =audios[num].dataset.url;
   document.getElementById('imagenDisco').src = "resources/musica/disco"+num+".png";
-  document.getElementById('botonPausa').src="resources/reproductor/pausa.png";
+  document.getElementById('botonPausa').src="resources/reproductor/pausa.gif";
   sessionStorage.setItem("tiempoTexto",document.getElementById('duracionTotal').innerHTML);
 }
 
@@ -159,7 +159,7 @@ function minutoCero(){
     document.getElementById('imagenDiscoA').value = num;
     document.getElementById('imagenDiscoA').href =audios[num].dataset.url;
     document.getElementById('imagenDisco').src = "resources/musica/disco"+num+".png";
-    document.getElementById('botonPausa').src="resources/reproductor/pausa.png";
+    document.getElementById('botonPausa').src="resources/reproductor/pausa.gif";
     sessionStorage.setItem("tiempoTexto",document.getElementById('duracionTotal').innerHTML);
   }
   else{
@@ -171,7 +171,7 @@ function pausar(){
   var boton=document.getElementById('botonPausa');
   num =  document.getElementById('imagenDiscoA').value;
   audios[num].pause();
-  boton.src="resources/reproductor/play.png"
+  boton.src="resources/reproductor/play.gif"
 }
 
 function cambiarVolumen(valor){

@@ -8,6 +8,8 @@ mapa = document.getElementById("fondo");
 last_dir = player.dataset.last_dir;
 fondo_x = "50%";
 fondo_y = "50%";
+hidden_x = 0;
+hidden_y = 0;
 
 player.style.left="737px";
 player.style.top="30px";
@@ -66,6 +68,12 @@ var coords = [
     "rango_y":[136,180],
     "accion":"modal",
     "numero":6
+  },
+        {
+    "rango_x":[710,734],
+    "rango_y":[419,457],
+    "accion":"funcion",
+    "numero":-3
   },
 ];
 
@@ -131,7 +139,6 @@ var tick = function() {
         last_dir="nada";
     }
   }
-  console.log(fondo_x+","+fondo_y);
 
   setTimeout(tick, tickRate);
 };
@@ -142,6 +149,12 @@ window.onkeyup = function(k){
   if(k.key=="e"){
     if(modal_actual==-1){
       interactuar();
+    }
+    else if(modal_actual==-2){
+      document.getElementById("modal_c").classList.add("modal_escondido");
+      document.getElementById("modal_s").classList.add("modal_escondido");
+      modal_actual = -1;
+      puede_moverse = true;
     }
     else{
       esconderModal(modal_actual);
@@ -173,6 +186,21 @@ function interactuar(){
         else if(coords[i]["numero"]==-2){
           window.location = "templo.html";
         }
+        else if(coords[i]["numero"]==-3){
+          night();
+        }
+        else if(coords[i]["numero"]==-4){
+          puede_moverse=false;
+          modal_actual=-2;
+          document.getElementById("modal_s").classList.toggle("modal_escondido");
+          // ESTE ES EL SECRETO
+        }
+        else if(coords[i]["numero"]==-5){
+          puede_moverse=false;
+          modal_actual=-2;
+          document.getElementById("modal_c").classList.toggle("modal_escondido");
+          //ESTE ES EL CENTRO
+        }
       }
       else{
         //bloquear movimiento
@@ -192,7 +220,83 @@ function mostrarModal(num){
   document.getElementById(num).classList.toggle("modal_escondido");
   modal_actual  = num;
 }
+
 function esconderModal(){
   document.getElementById(modal_actual).classList.toggle("modal_escondido");
   modal_actual  = -1;
+}
+
+function night(){
+  document.getElementById("fondo").style.backgroundImage =" url('../resources/fondos/city_night.png')";
+  document.getElementById("main_char").style.filter = "none";
+  document.getElementById("main_char").classList.toggle("chars");
+  document.getElementsByClassName("farola")[0].classList.remove("modal_escondido");
+  document.getElementsByClassName("farola")[1].classList.remove("modal_escondido");
+  document.getElementsByClassName("farola")[2].classList.remove("modal_escondido");
+  document.getElementsByClassName("farola")[3].classList.remove("modal_escondido");
+  d = new Date();
+  if(d.getDate()==19&&d.getMonth()==4){
+    document.getElementById("modal_c").innerHTML='<p>Alguien ha dejado un teléfono en el suelo.</p><img src="../resources//bordes/telefono.png" class="tel"><div class="tel_content"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2pKi1lRvXNASy7ybeQIDTy?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>';
+  }
+  play_audio();
+
+  //puta mierda
+  document.getElementById("main_char").nextElementSibling.remove();
+  document.getElementById("main_char").nextElementSibling.remove();
+  document.getElementById("main_char").nextElementSibling.remove();
+  document.getElementById("main_char").nextElementSibling.remove();
+  document.getElementById("main_char").nextElementSibling.remove();
+  document.getElementById("main_char").nextElementSibling.remove();
+  document.getElementById("main_char").nextElementSibling.remove();
+  document.getElementById("main_char").nextElementSibling.remove();
+
+  hidden_x = Math.random() * (1250 - 30) + 30;
+  hidden_y = Math.random() * (500 - 10) + 10;
+
+  while((hidden_x>500)&&(hidden_x<750)&&(hidden_y>200)&&(hidden_y<400)){
+    hidden_x = Math.random() * (1250 - 30) + 30;
+    hidden_y = Math.random() * (500 - 10) + 10;
+  }
+
+  coords=  [{
+    "rango_x":[(hidden_x-100) ,(hidden_x+100)],
+    "rango_y":[(hidden_y-100) ,(hidden_y+100)],
+    "accion":"funcion",
+    "numero":-4
+  },
+    {
+    "rango_x":[650,700],
+    "rango_y":[275,325],
+    "accion":"funcion",
+    "numero":-5
+  }];
+
+}
+
+function play_audio(){
+  document.getElementById("ambient").play();
+  loop_audio();
+  check_vol()
+}
+
+function loop_audio(){
+  document.getElementById("ambient").currentTime = 0.1;
+  setTimeout(loop_audio,9000);
+}
+
+function check_vol(){
+  // vol_x = 0.1 + 0,4*(1/(1+Math.abs(hidden_x-fondo_x)));
+  // vol_y = 0.1 + 0.4*(1/(1+Math.abs(hidden_y-fondo_y)));
+  vol_x = 0.5*(1-(Math.abs(hidden_x-fondo_x)/600));
+  vol_y = 0.5*(1-(Math.abs(hidden_y-fondo_y)/250));
+  vol = vol_x + vol_y;
+  if(vol<0.1){
+    vol=0.1;
+  }
+  if(vol>10){
+    vol=10;
+  }
+  document.getElementById("ambient").volume = vol;
+  // .volume = 0.5;
+  setTimeout(check_vol,100);
 }
