@@ -372,7 +372,7 @@ function modalShow(tipo){
             <p>Es un poco frustrante ser fan de este personaje por un par de motivos. Creo que jamás he visto una mayor víctima de mischaracterization por parte de la comunidad, me da la impresion de que la gente sólo recuerda las primeras pocas horas del juego, cuando es borde y resentida, y se olvida de la evolución y la parte verdaderamente entrañable del personaje. Por no hablar de lo absurdamente horny que está todo el mundo con este personaje. Aunque sea asexual, entiendo lo que hace atractiva a una persona, pero jamás lograré comprender el efecto que tiene un personaje con esta complexión física en la mente de tanto pajero. Este es uno de esos personajes de los que NO puedes buscar imágenes directamente en google, porque no exagero cuando digo que la mitad de los resultados son porno. I hate it here.</p>
             <h1>Kinlist</h1>
             <p>Bueno, venga, ya he escrito suficiente, aquí tienes embarrassing information about myself.</p>
-            <img src="../resources/SobreMi/kinlist.png" class=imagen_texto width=600px>
+            <img src="../resources/sobreMi/kinlist.png" class=imagen_texto width=600px>
             <p>Tienes que avisarme si te sientes absolutamente feral por alguno de estos personajes! Vamos a hablar de ellos!
                 `;
             break;
