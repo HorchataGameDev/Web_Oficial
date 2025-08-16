@@ -17,7 +17,7 @@ html{
 
 #controlador_musica{
   position: fixed;
-  height: 20%;
+  height: 150px;
   aspect-ratio: 1/1;
   top:2%;
   right: 2%;
@@ -32,7 +32,7 @@ html{
 
 #controlador_presentacion{
   position: fixed;
-  height: 20%;
+  height: 150px;
   aspect-ratio: 1/1;
   top:2%;
   left: 2%;

@@ -2,7 +2,7 @@ if(sessionStorage.getItem("premio")!=null){
   premio = document.createElement("img");
   premio.setAttribute("src","../resources/winner.png");
   premio.setAttribute("onerror","this.setAttribute('src','resources/winner.png')");
-  premio.style="height:200px;width:200px;position:fixed;top:0px;right:100px;z-index:0;pointer-events:none;";
+  premio.style="height:200px;width:200px;position:fixed;top:0px;right:100px;z-index:2;pointer-events:none;";
   premio.setAttribute("id","premio");
   document.body.appendChild(premio);
 }
